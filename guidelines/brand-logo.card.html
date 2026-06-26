@@ -1,0 +1,22 @@
+<!-- @dsCard group="Brand" viewport="700x230" name="Logo Lockup" subtitle="Primary gold lockup on Bone and Tobacco grounds" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--surface-page); padding: 0; display: grid; grid-template-columns: 1fr 1fr; }
+  .panel { display: flex; align-items: center; justify-content: center; padding: 40px; min-height: 230px; }
+  .bone { background: var(--skg-bone-cream); }
+  .dark { background: var(--skg-tobacco); }
+  img { width: 170px; height: auto; }
+  .tag { position: absolute; bottom: 12px; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-faint); }
+  .panel { position: relative; }
+  .dark .tag { color: var(--text-on-dark-faint); }
+</style>
+</head>
+<body>
+  <div class="panel bone"><img src="../assets/logo/skg-logo-gold.png" alt="SKG — The Power of Trust" /><span class="tag">On Bone Cream</span></div>
+  <div class="panel dark"><img src="../assets/logo/skg-logo-gold.png" alt="SKG — The Power of Trust" /><span class="tag">On Tobacco</span></div>
+</body>
+</html>

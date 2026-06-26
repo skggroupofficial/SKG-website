@@ -1,0 +1,43 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Closing — Contact" subtitle="Dark sign-off with lockup + details" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  html, body { margin: 0; }
+  .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; background: var(--tobacco-800); color: var(--bone-200); }
+  .lattice { position: absolute; inset: 0; }
+  .pad { position: absolute; inset: 0; padding: 80px 88px; display: flex; flex-direction: column; justify-content: space-between; }
+  .top { display: flex; align-items: center; gap: 26px; }
+  .top img { height: 108px; width: auto; }
+  .top .tag { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--brass-300); }
+  .mid { max-width: 24ch; }
+  .mid h2 { font-family: var(--font-display); font-weight: 700; font-size: 72px; line-height: 1.0; letter-spacing: -0.02em; color: var(--bone-100); margin: 0; }
+  .grid { display: grid; grid-template-columns: repeat(3, auto); gap: 70px; }
+  .grid .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass-300); margin-bottom: 10px; }
+  .grid .v { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--text-on-dark-muted); }
+  .rule { height: 1px; background: var(--border-on-dark); margin-bottom: 30px; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="lattice skg-lattice--dark"></div>
+    <div class="pad">
+      <div class="top">
+        <img src="../assets/logo/skg-monogram-gold.png" alt="SKG" />
+        <span class="tag">The Power of Trust</span>
+      </div>
+      <div class="mid"><h2>Let's talk about your ground.</h2></div>
+      <div>
+        <div class="rule"></div>
+        <div class="grid">
+          <div><div class="k">Office</div><div class="v">Shri Kuber House, 5th Floor<br/>S.G. Highway, Ahmedabad — 380051</div></div>
+          <div><div class="k">Speak</div><div class="v">+91 98765 43210<br/>info@shrikubergroup.com</div></div>
+          <div><div class="k">Online</div><div class="v">www.shrikubergroup.com</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

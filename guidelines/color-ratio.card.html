@@ -1,0 +1,31 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Usage Ratio" subtitle="Bone 60 · Tobacco 25 · Brass 10 · Jade 5" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--surface-page); padding: 28px; }
+  .bar { display: flex; height: 78px; border: 1px solid var(--border-subtle); overflow: hidden; }
+  .seg { display: flex; align-items: flex-end; padding: 10px; }
+  .pct { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; }
+  .legend { display: flex; gap: 22px; margin-top: 14px; }
+  .lg { display: flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+  .dot { width: 10px; height: 10px; border: 1px solid var(--border-subtle); }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <div class="seg" style="flex:60; background:var(--skg-bone-cream)"><span class="pct" style="color:var(--tobacco-500)">60%</span></div>
+    <div class="seg" style="flex:25; background:var(--skg-tobacco)"><span class="pct" style="color:var(--bone-200)">25%</span></div>
+    <div class="seg" style="flex:10; background:var(--skg-aged-brass)"><span class="pct" style="color:var(--tobacco-900)">10%</span></div>
+    <div class="seg" style="flex:5; background:var(--skg-smoky-jade)"><span class="pct" style="color:var(--bone-200)">5</span></div>
+  </div>
+  <div class="legend">
+    <span class="lg"><span class="dot" style="background:var(--skg-bone-cream)"></span>Bone — ground</span>
+    <span class="lg"><span class="dot" style="background:var(--skg-tobacco)"></span>Tobacco — type</span>
+    <span class="lg"><span class="dot" style="background:var(--skg-aged-brass)"></span>Brass — accent</span>
+    <span class="lg"><span class="dot" style="background:var(--skg-smoky-jade)"></span>Jade — highlight</span>
+  </div>
+</body>
+</html>

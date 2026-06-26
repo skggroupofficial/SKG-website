@@ -1,0 +1,36 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Functional" subtitle="Earthy status colours — never neon" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--surface-page); padding: 28px; }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .sw { display: flex; flex-direction: column; }
+  .chip { height: 64px; display: flex; align-items: center; padding-left: 14px; }
+  .pill { font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 4px 10px; }
+  .name { font-family: var(--font-display); font-size: 15px; color: var(--text-primary); margin-top: 11px; }
+  .hex { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw">
+      <div class="chip" style="background:var(--positive-soft)"><span class="pill" style="background:var(--positive); color:var(--bone-100)">Positive</span></div>
+      <div class="name">Positive — Jade</div>
+      <div class="hex">#3E5E50</div>
+    </div>
+    <div class="sw">
+      <div class="chip" style="background:var(--notice-soft)"><span class="pill" style="background:var(--notice); color:var(--tobacco-900)">Notice</span></div>
+      <div class="name">Notice — Brass</div>
+      <div class="hex">#A07830</div>
+    </div>
+    <div class="sw">
+      <div class="chip" style="background:var(--critical-soft)"><span class="pill" style="background:var(--critical); color:var(--bone-100)">Critical</span></div>
+      <div class="name">Critical — Terracotta</div>
+      <div class="hex">#9B4A2F</div>
+    </div>
+  </div>
+</body>
+</html>

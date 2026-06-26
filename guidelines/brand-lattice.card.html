@@ -1,0 +1,20 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Lattice Pattern" subtitle="Diagonal brass crosshatch — 8% on bone, 12% on tobacco" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--surface-page); padding: 0; display: grid; grid-template-columns: 1fr 1fr; }
+  .panel { min-height: 200px; position: relative; }
+  .bone { background: var(--skg-bone-cream); }
+  .dark { background: var(--skg-tobacco); }
+  .tag { position: absolute; bottom: 14px; left: 16px; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-faint); }
+  .dark .tag { color: var(--text-on-dark-faint); }
+</style>
+</head>
+<body>
+  <div class="panel bone skg-lattice"><span class="tag">On Bone · brass 8%</span></div>
+  <div class="panel dark skg-lattice--dark"><span class="tag">On Tobacco · brass 12%</span></div>
+</body>
+</html>

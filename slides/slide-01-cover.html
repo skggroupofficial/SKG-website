@@ -1,0 +1,45 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Cover" subtitle="Dark title slide — wordmark + statement" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  html, body { margin: 0; }
+  .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; background: var(--tobacco-800); color: var(--bone-200); }
+  .lattice { position: absolute; inset: 0; }
+  .pad { position: absolute; inset: 0; padding: 72px 88px; display: flex; flex-direction: column; }
+  .util { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--brass-300); }
+  .bracket { position: absolute; top: 64px; right: 88px; width: 86px; height: 86px; border: 1px solid var(--brass-500); }
+  .bracket::after { content: ""; position: absolute; top: 30px; left: -30px; width: 30px; height: 1px; background: var(--brass-500); opacity: .6; }
+  .center { margin-top: auto; margin-bottom: auto; }
+  .word { font-family: var(--font-display); font-weight: 800; font-size: 168px; line-height: 0.9; letter-spacing: -0.02em; color: var(--bone-100); }
+  .rule { width: 64px; height: 1px; background: var(--brass-400); margin: 26px 0; opacity: .8; }
+  .statement { font-family: var(--font-display); font-style: italic; font-size: 38px; color: var(--bone-300); }
+  .labels { display: flex; gap: 40px; margin-top: 30px; }
+  .labels span { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--brass-300); }
+  .labels span::before { content: "— "; color: var(--brass-500); }
+  .foot { display: flex; justify-content: space-between; align-items: flex-end; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-on-dark-faint); }
+  .foot .divs { text-align: right; line-height: 1.9; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="lattice skg-lattice--dark"></div>
+    <div class="bracket"></div>
+    <div class="pad">
+      <div class="util">Shri Kuber Group · 2026</div>
+      <div class="center">
+        <div class="word">SKG</div>
+        <div class="rule"></div>
+        <div class="statement">Ground. Form. Experience.</div>
+        <div class="labels"><span>Develop</span><span>Build</span><span>Host</span></div>
+      </div>
+      <div class="foot">
+        <span>The Power of Trust</span>
+        <span class="divs">Real Estate Development<br/>Construction<br/>Hospitality</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

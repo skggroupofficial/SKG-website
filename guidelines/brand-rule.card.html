@@ -1,0 +1,22 @@
+<!-- @dsCard group="Brand" viewport="700x180" name="Rule & Sparkle" subtitle="The gold hairline divider with centred four-point star" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--surface-page); padding: 36px 48px; display: flex; flex-direction: column; gap: 30px; justify-content: center; }
+  .sparkle-rule { display: flex; align-items: center; gap: 16px; color: var(--accent); }
+  .sparkle-rule::before, .sparkle-rule::after { content: ""; flex: 1; height: 1px; background: var(--rule-gold); opacity: .55; }
+  .sparkle-rule span { font-size: 14px; }
+  .plain { height: 1px; background: var(--rule-gold); opacity: .5; }
+  .legend { font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+  <div class="legend"><span>Sparkle rule ✦ U+2726</span><span>Section breaks · footers</span></div>
+  <div class="sparkle-rule"><span>✦</span></div>
+  <div class="plain"></div>
+  <div class="legend"><span>Plain gold hairline</span><span>Inline dividers</span></div>
+</body>
+</html>

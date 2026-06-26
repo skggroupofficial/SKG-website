@@ -1,0 +1,116 @@
+/* ============================================================
+   SKG — Colour Tokens
+   Palette: "Architectural Earth" (Brand Board 2026 §03)
+   Base ratio in layout — Bone 60 · Tobacco 25 · Brass 10 · Jade 5
+   ============================================================ */
+
+:root {
+  /* ---------- Brand anchors (verbatim from brand board) ---------- */
+  --skg-bone-cream:  #F4EFE4; /* PMS 9123 C · Primary BG */
+  --skg-tobacco:     #2C1C10; /* PMS 476 C  · Type / BG Alt */
+  --skg-aged-brass:  #A07830; /* PMS 131 C  · Accent / Rules */
+  --skg-smoky-jade:  #3E5E50; /* PMS 627 C  · Highlight */
+
+  /* ---------- Bone / neutral ramp (warm off-whites → linen) ---------- */
+  --bone-50:  #FCFAF6;
+  --bone-100: #F8F4EC;
+  --bone-200: #F4EFE4; /* = Bone Cream — page ground */
+  --bone-300: #EDE6D8; /* linen / sunken surface */
+  --bone-400: #E1D7C5; /* limestone tint / hairline on light */
+  --bone-500: #CDBDA2; /* limestone */
+  --bone-600: #B3A184; /* muted stone */
+
+  /* ---------- Tobacco / brown ramp ---------- */
+  --tobacco-900: #1E120A; /* deepest ground */
+  --tobacco-800: #2C1C10; /* = Tobacco — primary dark surface */
+  --tobacco-700: #3A2717; /* raised dark surface */
+  --tobacco-600: #5A4330; /* aged timber */
+  --tobacco-500: #6E5238; /* secondary text on light */
+  --tobacco-400: #8A6E50; /* muted text / timber light */
+
+  /* ---------- Brass / gold ramp (the metallic accent, flat) ---------- */
+  --brass-800: #6E4F1E;
+  --brass-700: #835E24;
+  --brass-600: #8E6A2A;
+  --brass-500: #A07830; /* = Aged Brass — primary accent */
+  --brass-400: #B68E47; /* hover / lighter brass */
+  --brass-300: #CBA968; /* light brass */
+  --brass-200: #E2D2AC; /* pale brass — tints / lattice on dark */
+  --brass-100: #EFE6CF; /* faint brass wash */
+
+  /* ---------- Jade ramp (the quiet highlight) ---------- */
+  --jade-700: #2C463B;
+  --jade-600: #34503F;
+  --jade-500: #3E5E50; /* = Smoky Jade — highlight */
+  --jade-400: #58786A;
+  --jade-300: #88A092; /* soft jade for text on dark */
+  --jade-200: #C3D2C9; /* faint jade wash */
+
+  /* ---------- Pure ---------- */
+  --white: #FFFFFF;
+  --black: #160D06;
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components, not the ramps
+     ============================================================ */
+
+  /* Surfaces */
+  --surface-page:        var(--bone-200); /* default ground (60%) */
+  --surface-raised:      var(--bone-100); /* cards on bone */
+  --surface-raised-2:    var(--bone-50);  /* hover / floating */
+  --surface-sunken:      var(--bone-300); /* wells, alt rows */
+  --surface-dark:        var(--tobacco-800); /* dark sections (25%) */
+  --surface-dark-raised: var(--tobacco-700); /* cards on dark */
+  --surface-dark-deep:   var(--tobacco-900);
+  --surface-inverse:     var(--tobacco-800);
+
+  /* Text on light ground */
+  --text-primary:   var(--tobacco-800); /* headings / body */
+  --text-secondary: var(--tobacco-500); /* supporting copy */
+  --text-muted:     var(--tobacco-400); /* captions / meta */
+  --text-faint:     var(--bone-600);    /* disabled / watermark */
+  --text-accent:    var(--brass-500);   /* brass emphasis */
+
+  /* Text on dark ground */
+  --text-on-dark:        var(--bone-200);
+  --text-on-dark-muted:  #C7B9A6;       /* warm muted bone */
+  --text-on-dark-faint:  #897764;
+  --text-on-dark-accent: var(--brass-300);
+
+  /* Accent (brass) */
+  --accent:        var(--brass-500);
+  --accent-hover:  var(--brass-600);
+  --accent-press:  var(--brass-700);
+  --accent-text:   var(--brass-500);
+  --accent-soft:   rgba(160, 120, 48, 0.10); /* tint fills */
+  --accent-softer: rgba(160, 120, 48, 0.06);
+
+  /* Highlight (jade) */
+  --highlight:      var(--jade-500);
+  --highlight-soft: rgba(62, 94, 80, 0.10);
+
+  /* Lines & borders */
+  --border-subtle:   rgba(44, 28, 16, 0.10); /* hairline on light */
+  --border-default:  rgba(44, 28, 16, 0.16);
+  --border-strong:   rgba(44, 28, 16, 0.28);
+  --border-brass:    var(--brass-500);       /* gold rules */
+  --border-on-dark:  rgba(244, 239, 228, 0.16);
+  --rule-gold:       var(--brass-500);
+
+  /* Focus ring */
+  --focus-ring: rgba(160, 120, 48, 0.55);
+
+  /* ---------- Functional (kept earthy, never neon) ---------- */
+  --positive:      var(--jade-500);
+  --positive-soft: rgba(62, 94, 80, 0.12);
+  --notice:        var(--brass-500);
+  --notice-soft:   rgba(160, 120, 48, 0.12);
+  --critical:      #9B4A2F; /* burnt terracotta — fits earth palette */
+  --critical-soft: rgba(155, 74, 47, 0.12);
+
+  /* ---------- Material reference (Brand Board §07) ---------- */
+  --material-limestone:    #CDBDA2;
+  --material-aged-timber:  #5A4330;
+  --material-brass:        #A07830;
+  --material-natural-linen:#EDE6D8;
+}

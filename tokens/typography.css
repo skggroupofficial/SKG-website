@@ -1,0 +1,89 @@
+/* ============================================================
+   SKG — Typography Tokens
+   Playfair Display (display) · Libre Franklin (body) · DM Mono (label)
+   Scale & tracking per Brand Board 2026 §04.
+   Tracking interpreted as em (board "-20" = -0.02em, "+200" = +0.20em).
+   ============================================================ */
+
+:root {
+  /* ---------- Families ---------- */
+  --font-display: "Playfair Display", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-body:    "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono:    "DM Mono", ui-monospace, "SF Mono", "Roboto Mono", Menlo, monospace;
+
+  /* ---------- Weights ---------- */
+  --weight-light:    300; /* caption */
+  --weight-regular:  400; /* body, display italic, label */
+  --weight-medium:   500; /* subheading */
+  --weight-semibold: 600;
+  --weight-bold:     700; /* display */
+  --weight-black:    900;
+
+  /* ---------- Type scale (rem · 16px base) ---------- */
+  --text-2xs:  0.6875rem; /* 11px — micro label */
+  --text-xs:   0.75rem;   /* 12px — caption / meta */
+  --text-sm:   0.8125rem; /* 13px */
+  --text-base: 0.9375rem; /* 15px — UI body */
+  --text-md:   1.0625rem; /* 17px — long-form body */
+  --text-lg:   1.375rem;  /* 22px — subheading */
+  --text-xl:   1.75rem;   /* 28px */
+  --text-2xl:  2.25rem;   /* 36px — display italic */
+  --text-3xl:  3rem;      /* 48px */
+  --text-4xl:  4rem;      /* 64px — display */
+  --text-5xl:  5.5rem;    /* 88px */
+  --text-6xl:  7.5rem;    /* 120px — hero monumental */
+
+  /* ---------- Line heights ---------- */
+  --leading-none:    1;
+  --leading-tight:   1.05; /* large display */
+  --leading-snug:    1.22; /* subheadings */
+  --leading-normal:  1.5;  /* body */
+  --leading-relaxed: 1.65; /* long-form body */
+  --leading-caption: 1.45;
+
+  /* ---------- Tracking ---------- */
+  --tracking-display:  -0.02em; /* Playfair 700 */
+  --tracking-tight:    -0.01em;
+  --tracking-normal:    0em;
+  --tracking-wide:      0.005em; /* display italic / subheading */
+  --tracking-label:     0.20em;  /* DM Mono wayfinding (+200) */
+  --tracking-label-sm:  0.14em;  /* smaller mono labels */
+
+  /* ============================================================
+     ROLE TOKENS — composite, map 1:1 to brand board specimens
+     (use the .skg-* classes in base.css, or these for custom CSS)
+     ============================================================ */
+
+  /* Display — Playfair Bold */
+  --role-display-family:   var(--font-display);
+  --role-display-weight:   var(--weight-bold);
+  --role-display-tracking: var(--tracking-display);
+  --role-display-leading:  var(--leading-tight);
+
+  /* Display Italic — Playfair Italic */
+  --role-display-italic-family:   var(--font-display);
+  --role-display-italic-weight:   var(--weight-regular);
+  --role-display-italic-tracking: var(--tracking-wide);
+  --role-display-italic-leading:  1.1;
+
+  /* Subheading — Playfair Medium */
+  --role-subheading-family:   var(--font-display);
+  --role-subheading-weight:   var(--weight-medium);
+  --role-subheading-tracking: var(--tracking-wide);
+  --role-subheading-leading:  var(--leading-snug);
+
+  /* Body — Libre Franklin Regular */
+  --role-body-family:  var(--font-body);
+  --role-body-weight:  var(--weight-regular);
+  --role-body-leading: var(--leading-relaxed);
+
+  /* Caption — Libre Franklin Light */
+  --role-caption-family:  var(--font-body);
+  --role-caption-weight:  var(--weight-light);
+  --role-caption-leading: var(--leading-caption);
+
+  /* Label / Wayfinding — DM Mono, UPPERCASE, wide */
+  --role-label-family:   var(--font-mono);
+  --role-label-weight:   var(--weight-regular);
+  --role-label-tracking: var(--tracking-label);
+}

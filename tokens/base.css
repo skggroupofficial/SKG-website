@@ -1,0 +1,189 @@
+/* ============================================================
+   SKG — Base & Utilities
+   Light reset + brand defaults + role/utility classes.
+   Linking styles.css gives consumers the SKG ground, body font,
+   and the .skg-* helpers out of the box.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background-color: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+::selection { background: rgba(160, 120, 48, 0.24); color: var(--tobacco-900); }
+
+:where(a) { color: var(--accent); text-decoration: none; }
+:where(h1, h2, h3, h4, h5, h6) { margin: 0; font-weight: var(--weight-regular); }
+:where(p) { margin: 0; }
+:where(img, svg, video) { display: block; max-width: 100%; }
+
+:where(:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* ============================================================
+   TYPE ROLE CLASSES — map 1:1 to brand board specimens
+   ============================================================ */
+
+.skg-display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: clamp(2.5rem, 6vw, var(--text-4xl));
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  color: var(--text-primary);
+}
+.skg-display--xl { font-size: clamp(3rem, 9vw, var(--text-6xl)); }
+.skg-display--lg { font-size: clamp(2.75rem, 7vw, var(--text-5xl)); }
+
+.skg-display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: var(--weight-regular);
+  font-size: clamp(1.6rem, 4vw, var(--text-2xl));
+  line-height: 1.12;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-primary);
+}
+
+.skg-subheading {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-primary);
+}
+
+.skg-body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+.skg-body--lead { font-size: var(--text-lg); line-height: var(--leading-normal); color: var(--text-primary); }
+
+.skg-caption {
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: var(--text-xs);
+  line-height: var(--leading-caption);
+  color: var(--text-muted);
+}
+
+/* Label / Wayfinding — DM Mono, uppercase, very wide */
+.skg-label,
+.skg-eyebrow {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+.skg-label--sm { font-size: var(--text-2xs); letter-spacing: var(--tracking-label-sm); }
+.skg-label--muted { color: var(--text-muted); }
+.skg-label--on-dark { color: var(--text-on-dark-accent); }
+
+/* Eyebrow with leading dash marker (brand board "— DEVELOP") */
+.skg-eyebrow--dash::before {
+  content: "—";
+  margin-right: 0.6em;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+/* ============================================================
+   BRAND DEVICES
+   ============================================================ */
+
+/* The four-point star — SKG's recurring sparkle (glyph ✦ U+2726) */
+.skg-sparkle { color: var(--accent); font-style: normal; line-height: 1; }
+
+/* Gold hairline rule, optionally split by a centered sparkle */
+.skg-rule {
+  border: 0;
+  height: 1px;
+  background: var(--rule-gold);
+  opacity: 0.5;
+  margin: var(--space-6) 0;
+}
+.skg-rule--sparkle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  border: 0;
+  margin: var(--space-6) 0;
+  color: var(--accent);
+}
+.skg-rule--sparkle::before,
+.skg-rule--sparkle::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule-gold);
+  opacity: 0.5;
+}
+.skg-rule--sparkle .skg-sparkle::before { content: "✦"; font-size: 0.8em; }
+
+/* Brand lattice pattern (diagonal crosshatch) */
+.skg-lattice {
+  background-image:
+    repeating-linear-gradient(45deg,  var(--lattice-on-bone) 0 1px, transparent 1px var(--lattice-cell)),
+    repeating-linear-gradient(-45deg, var(--lattice-on-bone) 0 1px, transparent 1px var(--lattice-cell));
+}
+.skg-lattice--dark {
+  background-image:
+    repeating-linear-gradient(45deg,  var(--lattice-on-dark) 0 1px, transparent 1px var(--lattice-cell)),
+    repeating-linear-gradient(-45deg, var(--lattice-on-dark) 0 1px, transparent 1px var(--lattice-cell));
+}
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.skg-container {
+  width: 100%;
+  max-width: var(--container-lg);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.skg-container--md { max-width: var(--container-md); }
+.skg-container--xl { max-width: var(--container-xl); }
+.skg-container--prose { max-width: var(--container-xs); }
+
+.skg-section { padding-block: var(--section-pad-y); }
+
+/* Dark inverse region — flips text tokens for content inside */
+.skg-on-dark {
+  background-color: var(--surface-dark);
+  color: var(--text-on-dark);
+  --text-primary: var(--text-on-dark);
+  --text-secondary: var(--text-on-dark-muted);
+  --text-muted: var(--text-on-dark-faint);
+  --border-subtle: var(--border-on-dark);
+  --text-accent: var(--text-on-dark-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

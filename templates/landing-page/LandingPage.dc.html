@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="SKG Landing Page" description="One-page marketing landing — hero, divisions, proof stats and CTA, built on the SKG system." -->
+<helmet>
+  <script src="./ds-base.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <style>
+    body { margin: 0; background: var(--surface-page); color: var(--text-primary); font-family: var(--font-body); }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; background:var(--surface-page);">
+
+  <!-- Header -->
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; padding:1.1rem clamp(1.25rem,4vw,4rem); background:rgba(244,239,228,0.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--border-subtle);">
+    <span style="font-family:var(--font-display); font-weight:800; font-size:26px; letter-spacing:-0.01em; color:var(--tobacco-800);">SKG</span>
+    <nav style="display:flex; gap:2rem; font-family:var(--font-mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-secondary);">
+      <span>Projects</span><span>Approach</span><span>Contact</span>
+    </nav>
+    <x-import component-from-global-scope="SKGShriKuberGroupDesignSystem_2a6fdb.Button" variant="accent" size="sm" hint-size="120px,40px">Enquire</x-import>
+  </header>
+
+  <!-- Hero -->
+  <section style="position:relative; overflow:hidden; background:var(--tobacco-800); color:var(--text-on-dark); padding:clamp(3.5rem,8vw,7rem) clamp(1.25rem,4vw,4rem);">
+    <div style="position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(226,210,172,0.12) 0 1px, transparent 1px 30px), repeating-linear-gradient(-45deg, rgba(226,210,172,0.12) 0 1px, transparent 1px 30px);"></div>
+    <div style="position:relative; max-width:var(--container-lg); margin:0 auto; display:flex; flex-direction:column; gap:1.6rem;">
+      <span style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass-300);">— Develop · Build · Host</span>
+      <h1 style="font-family:var(--font-display); font-weight:700; font-size:clamp(2.6rem,6vw,5rem); line-height:0.98; letter-spacing:-0.02em; color:var(--bone-100); max-width:18ch; margin:0;">Built to last beyond the current cycle.</h1>
+      <p style="font-family:var(--font-body); font-size:1.1rem; line-height:1.6; color:var(--text-on-dark-muted); max-width:46ch; margin:0;">A vertically integrated real estate firm — we acquire the ground, build the structure, and operate the hospitality within it. One team, accountable from the first survey to the fifteen-year guest.</p>
+      <div style="display:flex; gap:0.85rem; flex-wrap:wrap; margin-top:0.4rem;">
+        <x-import component-from-global-scope="SKGShriKuberGroupDesignSystem_2a6fdb.Button" variant="accent" hint-size="150px,44px">View projects</x-import>
+        <x-import component-from-global-scope="SKGShriKuberGroupDesignSystem_2a6fdb.Button" variant="inverse" hint-size="150px,44px">Our approach</x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof stats -->
+  <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+    <section style="padding:clamp(2.5rem,5vw,4rem) clamp(1.25rem,4vw,4rem); border-bottom:1px solid var(--border-subtle);">
+      <div style="max-width:var(--container-lg); margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem;">
+        <x-import component-from-global-scope="SKGShriKuberGroupDesignSystem_2a6fdb.Stat" value="1.4" unit="M ft²" label="Under development" hint-size="130px,92px"></x-import>
+        <x-import component-from-global-scope="SKGShriKuberGroupDesignSystem_2a6fdb.Stat" value="06" label="Active sites" hint-size="130px,92px"></x-import>
+        <x-import component-from-global-scope="SKGShriKuberGroupDesignSystem_2a6fdb.Stat" value="18" unit="yr" label="Average hold" hint-size="130px,92px"></x-import>
+        <x-import component-from-global-scope="SKGShriKuberGroupDesignSystem_2a6fdb.Stat" value="100" unit="%" label="Operated in-house" hint-size="130px,92px"></x-import>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- Divisions -->
+  <sc-if value="{{ showDivisions }}" hint-placeholder-val="{{ true }}">
+    <section style="position:relative; overflow:hidden; background:var(--bone-300); padding:clamp(3.5rem,7vw,6rem) clamp(1.25rem,4vw,4rem); border-bottom:1px solid var(--border-subtle);">
+      <div style="position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(160,120,48,0.08) 0 1px, transparent 1px 30px), repeating-linear-gradient(-45deg, rgba(160,120,48,0.08) 0 1px, transparent 1px 30px);"></div>
+      <div style="position:relative; max-width:var(--container-lg); margin:0 auto;">
+        <span style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent);">— What we do</span>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.02em; color:var(--text-primary); max-width:20ch; margin:1rem 0 2.5rem;">Three disciplines, one accountable firm.</h2>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;">
+
+          <div style="background:var(--bone-100); border:1px solid var(--border-subtle); padding:2rem; display:flex; flex-direction:column; gap:1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between;"><i class="ph ph-compass-tool" style="font-size:2rem; color:var(--accent);"></i><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.2em; color:var(--text-faint);">01</span></div>
+            <h3 style="font-family:var(--font-display); font-weight:700; font-size:1.8rem; margin:0;">Develop</h3>
+            <p style="font-family:var(--font-display); font-weight:500; font-size:1.05rem; color:var(--text-accent); margin:0;">Land, capital, masterplan.</p>
+            <p style="font-family:var(--font-body); font-size:0.95rem; line-height:1.6; color:var(--text-secondary); margin:0;">We acquire ground others overlook and underwrite it for the long horizon — assembling parcels and shaping the masterplan before a line is built.</p>
+          </div>
+
+          <div style="background:var(--bone-100); border:1px solid var(--border-subtle); padding:2rem; display:flex; flex-direction:column; gap:1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between;"><i class="ph ph-buildings" style="font-size:2rem; color:var(--accent);"></i><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.2em; color:var(--text-faint);">02</span></div>
+            <h3 style="font-family:var(--font-display); font-weight:700; font-size:1.8rem; margin:0;">Build</h3>
+            <p style="font-family:var(--font-display); font-weight:500; font-size:1.05rem; color:var(--text-accent); margin:0;">Structure and material lead.</p>
+            <p style="font-family:var(--font-body); font-size:0.95rem; line-height:1.6; color:var(--text-secondary); margin:0;">We build to last beyond the current cycle. Construction is managed in-house, in a material language chosen to age — limestone, oiled timber, unlacquered brass.</p>
+          </div>
+
+          <div style="background:var(--bone-100); border:1px solid var(--border-subtle); padding:2rem; display:flex; flex-direction:column; gap:1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between;"><i class="ph ph-bell" style="font-size:2rem; color:var(--accent);"></i><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.2em; color:var(--text-faint);">03</span></div>
+            <h3 style="font-family:var(--font-display); font-weight:700; font-size:1.8rem; margin:0;">Host</h3>
+            <p style="font-family:var(--font-display); font-weight:500; font-size:1.05rem; color:var(--text-accent); margin:0;">We operate what we build.</p>
+            <p style="font-family:var(--font-body); font-size:0.95rem; line-height:1.6; color:var(--text-secondary); margin:0;">Permanence demands accountability. We run the hospitality inside our developments ourselves, so a design decision reaches the guest fifteen years later.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- CTA -->
+  <section style="padding:clamp(3rem,6vw,5rem) clamp(1.25rem,4vw,4rem);">
+    <div style="max-width:var(--container-lg); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap;">
+      <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <span style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent);">— Land · Capital · Partnership</span>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:clamp(1.8rem,3.6vw,2.8rem); letter-spacing:-0.02em; margin:0;">Let's talk about your ground.</h2>
+      </div>
+      <x-import component-from-global-scope="SKGShriKuberGroupDesignSystem_2a6fdb.Button" variant="accent" size="lg" hint-size="200px,52px">Start a conversation</x-import>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="position:relative; overflow:hidden; background:var(--tobacco-900); color:var(--text-on-dark); padding:clamp(3rem,6vw,5rem) clamp(1.25rem,4vw,4rem) 2rem;">
+    <div style="position:absolute; inset:0; opacity:0.6; background-image:repeating-linear-gradient(45deg, rgba(226,210,172,0.12) 0 1px, transparent 1px 30px), repeating-linear-gradient(-45deg, rgba(226,210,172,0.12) 0 1px, transparent 1px 30px);"></div>
+    <div style="position:relative; max-width:var(--container-lg); margin:0 auto;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-align:center;">
+        <span style="font-family:var(--font-display); font-weight:800; font-size:30px; letter-spacing:-0.01em; color:var(--bone-100);">SKG</span>
+        <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:var(--brass-300);">The Power of Trust</span>
+      </div>
+      <div style="margin:2rem 0 1.4rem;">
+        <x-import component-from-global-scope="SKGShriKuberGroupDesignSystem_2a6fdb.Divider" variant="sparkle" hint-size="100%,16px"></x-import>
+      </div>
+      <div style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-on-dark-faint);">
+        <span>© 2026 Shri Kuber Group</span>
+        <span>Development · Construction · Hospitality</span>
+        <span>Ahmedabad · Gujarat</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1280, &quot;height&quot;: 1640 },
+  &quot;showStats&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot; },
+  &quot;showDivisions&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot; }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showStats: this.props.showStats ?? true,
+      showDivisions: this.props.showDivisions ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Content — Two Column" subtitle="Eyebrow, title, body + proof stats" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  html, body { margin: 0; }
+  .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; background: var(--bone-200); color: var(--tobacco-800); }
+  .pad { position: absolute; inset: 0; padding: 76px 88px; display: grid; grid-template-rows: auto 1fr auto; }
+  .top { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.24em; text-transform: uppercase; }
+  .top .a { color: var(--accent); }
+  .top .b { color: var(--text-faint); }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+  .eyebrow { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+  .eyebrow::before { content: "— "; }
+  .title { font-family: var(--font-display); font-weight: 700; font-size: 60px; line-height: 1.0; letter-spacing: -0.02em; margin: 22px 0 26px; max-width: 14ch; }
+  .body { font-family: var(--font-body); font-size: 20px; line-height: 1.6; color: var(--text-secondary); max-width: 42ch; }
+  .stats { display: flex; flex-direction: column; gap: 30px; border-left: 1px solid var(--border-default); padding-left: 48px; }
+  .stat .v { font-family: var(--font-display); font-weight: 700; font-size: 64px; line-height: 0.9; letter-spacing: -0.02em; }
+  .stat .v small { font-size: 0.42em; color: var(--accent); margin-left: 4px; }
+  .stat .l { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-top: 10px; }
+  .foot { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="pad">
+      <div class="top"><span class="a">03 — Vertical Integration</span><span class="b">Shri Kuber Group · 2026</span></div>
+      <div class="cols">
+        <div>
+          <div class="eyebrow">One accountable firm</div>
+          <div class="title">We operate what we build.</div>
+          <div class="body">When you develop, build and operate under one roof, a decision made at the design stage carries through to the guest who sleeps in the room fifteen years later.</div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="v">1.4<small>M ft²</small></div><div class="l">Under development</div></div>
+          <div class="stat"><div class="v">18<small>yr</small></div><div class="l">Average hold</div></div>
+          <div class="stat"><div class="v">100<small>%</small></div><div class="l">Operated in-house</div></div>
+        </div>
+      </div>
+      <div class="foot"><span>Develop · Build · Host</span><span>The Power of Trust</span></div>
+    </div>
+  </div>
+</body>
+</html>

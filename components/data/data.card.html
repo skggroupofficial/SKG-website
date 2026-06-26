@@ -1,0 +1,49 @@
+<!-- @dsCard group="Components" viewport="700x240" name="Stat · Tag · Badge" subtitle="Data & status primitives" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  body { margin: 0; background: var(--surface-page); padding: 30px 34px; }
+  .stack { display: flex; flex-direction: column; gap: 28px; }
+  .stats { display: flex; gap: 56px; }
+  .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" data-presets="react">
+    const { Stat, Tag, Badge } = window.SKGShriKuberGroupDesignSystem_2a6fdb;
+    function Demo() {
+      return (
+        <div className="stack">
+          <div className="stats">
+            <Stat value="1.4" unit="M ft²" label="Under development" />
+            <Stat value="18" unit="yr" label="Average hold" />
+            <Stat value="100" unit="%" label="Operated in-house" />
+          </div>
+          <div className="row">
+            <Tag>Phase 01</Tag>
+            <Tag variant="jade">Now leasing</Tag>
+            <Tag variant="outline">Hospitality</Tag>
+            <Tag variant="neutral" icon={<i className="ph ph-map-pin" />}>Ahmedabad</Tag>
+            <Tag variant="solid">Featured</Tag>
+            <span style={{display:'inline-flex', alignItems:'center', gap:'10px', marginLeft:'8px'}}>
+              <Badge>3</Badge>
+              <Badge variant="accent">New</Badge>
+              <Badge dot variant="accent" />
+            </span>
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+  </script>
+</body>
+</html>

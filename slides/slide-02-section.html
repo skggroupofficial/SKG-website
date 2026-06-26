@@ -1,0 +1,39 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Section Divider" subtitle="Numbered section break on bone" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  html, body { margin: 0; }
+  .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; background: var(--bone-200); color: var(--tobacco-800); }
+  .pad { position: absolute; inset: 0; padding: 72px 88px; display: flex; flex-direction: column; justify-content: space-between; }
+  .top { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; }
+  .top .a { color: var(--accent); }
+  .top .b { color: var(--text-faint); }
+  .mid { display: flex; align-items: flex-end; gap: 40px; }
+  .no { font-family: var(--font-mono); font-size: 22px; letter-spacing: 0.1em; color: var(--accent); padding-bottom: 22px; }
+  .title { font-family: var(--font-display); font-weight: 700; font-size: 132px; line-height: 0.92; letter-spacing: -0.02em; }
+  .sub { font-family: var(--font-display); font-style: italic; font-size: 30px; color: var(--text-secondary); margin-top: 22px; max-width: 30ch; }
+  .rule { display: flex; align-items: center; gap: 18px; color: var(--accent); }
+  .rule::before, .rule::after { content: ""; flex: 1; height: 1px; background: var(--rule-gold); opacity: .5; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="pad">
+      <div class="top"><span class="a">02 — What We Do</span><span class="b">Shri Kuber Group</span></div>
+      <div>
+        <div class="mid">
+          <span class="no">02</span>
+          <div>
+            <div class="title">Build</div>
+            <div class="sub">Built to last beyond the current cycle. Structure and material lead.</div>
+          </div>
+        </div>
+      </div>
+      <div class="rule"><span>✦</span></div>
+    </div>
+  </div>
+</body>
+</html>

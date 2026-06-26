@@ -1,0 +1,46 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Card · Divider · Quote" subtitle="Surfaces & editorial" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  body { margin: 0; background: var(--surface-page); padding: 28px 32px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" data-presets="react">
+    const { Card, Divider, Quote, Eyebrow, Tag } = window.SKGShriKuberGroupDesignSystem_2a6fdb;
+    function Demo() {
+      return (
+        <div>
+          <div className="grid">
+            <Card>
+              <Eyebrow dash>Development</Eyebrow>
+              <h3 className="skg-subheading" style={{margin:'10px 0 8px'}}>Riverfront Mixed-Use</h3>
+              <p className="skg-body" style={{margin:0, fontSize:'14px'}}>Land assembled, masterplan approved. Construction begins Q3.</p>
+              <div style={{marginTop:'14px'}}><Tag variant="jade">Phase 02</Tag></div>
+            </Card>
+            <Card variant="dark" pad="lg">
+              <Eyebrow dash tone="on-dark">Hospitality</Eyebrow>
+              <h3 className="skg-subheading" style={{margin:'10px 0 8px', color:'var(--bone-200)'}}>The Kuber, Ahmedabad</h3>
+              <p style={{margin:0, fontSize:'14px', color:'var(--text-on-dark-muted)', fontFamily:'var(--font-body)', lineHeight:1.6}}>Operated in-house. 84 keys overlooking the Sabarmati.</p>
+            </Card>
+          </div>
+          <div style={{margin:'22px 0'}}><Divider variant="sparkle" /></div>
+          <Quote cite="Rahul Kuber" role="Managing Director">
+            We build places that outlast the conversation about them.
+          </Quote>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+  </script>
+</body>
+</html>

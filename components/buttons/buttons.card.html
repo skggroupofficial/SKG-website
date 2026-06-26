@@ -1,0 +1,57 @@
+<!-- @dsCard group="Components" viewport="700x320" name="Buttons & Icon Buttons" subtitle="Variants · sizes · states" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  body { margin: 0; background: var(--surface-page); padding: 28px 32px; }
+  .stack { display: flex; flex-direction: column; gap: 20px; }
+  .row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .dark { background: var(--skg-tobacco); padding: 16px 20px; border-radius: 2px; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" data-presets="react">
+    const { Button, IconButton } = window.SKGShriKuberGroupDesignSystem_2a6fdb;
+    const Arrow = () => <i className="ph ph-arrow-right" />;
+    function Demo() {
+      return (
+        <div className="stack">
+          <div className="row">
+            <Button variant="accent" iconRight={<Arrow />}>Request prospectus</Button>
+            <Button variant="primary">Our approach</Button>
+            <Button variant="secondary">View projects</Button>
+            <Button variant="ghost">Cancel</Button>
+            <Button variant="link" iconRight={<i className="ph ph-arrow-up-right" />}>Read brief</Button>
+          </div>
+          <div className="row">
+            <Button size="sm">Small</Button>
+            <Button size="md">Medium</Button>
+            <Button size="lg">Large</Button>
+            <Button disabled>Disabled</Button>
+          </div>
+          <div className="row dark">
+            <Button variant="inverse">Talk to us</Button>
+            <Button variant="accent" iconRight={<Arrow />}>Enquire</Button>
+            <IconButton variant="outline" label="Search" style={{color:'var(--bone-200)', borderColor:'var(--border-on-dark)'}}><i className="ph ph-magnifying-glass" /></IconButton>
+          </div>
+          <div className="row">
+            <IconButton label="Menu"><i className="ph ph-list" /></IconButton>
+            <IconButton variant="outline" label="Search"><i className="ph ph-magnifying-glass" /></IconButton>
+            <IconButton variant="solid" label="Next"><i className="ph ph-arrow-right" /></IconButton>
+            <IconButton variant="outline" label="Download"><i className="ph ph-download-simple" /></IconButton>
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+  </script>
+</body>
+</html>

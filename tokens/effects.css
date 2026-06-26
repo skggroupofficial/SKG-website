@@ -1,0 +1,47 @@
+/* ============================================================
+   SKG — Effects: Shadows, Patterns, Motion, Elevation
+   Warm, tobacco-tinted shadows (never neutral grey).
+   ============================================================ */
+
+:root {
+  /* ---------- Shadows (warm — built on Tobacco 44·28·16) ---------- */
+  --shadow-xs:  0 1px 2px rgba(44, 28, 16, 0.07);
+  --shadow-sm:  0 1px 2px rgba(44, 28, 16, 0.05), 0 2px 8px rgba(44, 28, 16, 0.06);
+  --shadow-md:  0 4px 10px rgba(44, 28, 16, 0.06), 0 12px 28px rgba(44, 28, 16, 0.09);
+  --shadow-lg:  0 8px 18px rgba(44, 28, 16, 0.08), 0 28px 60px rgba(44, 28, 16, 0.13);
+  --shadow-xl:  0 16px 32px rgba(44, 28, 16, 0.10), 0 48px 96px rgba(44, 28, 16, 0.18);
+
+  /* Soft halo for elements on dark grounds */
+  --shadow-on-dark: 0 16px 50px rgba(0, 0, 0, 0.45);
+
+  /* Brass focus glow / hairline insets */
+  --ring-focus:  0 0 0 3px var(--focus-ring);
+  --inset-line:  inset 0 0 0 1px var(--border-subtle);
+  --inset-brass: inset 0 0 0 1px rgba(160, 120, 48, 0.45);
+
+  /* ---------- Brand pattern: diagonal lattice (Brand Board §07) ---------- */
+  --lattice-cell: 30px; /* @kind spacing */
+  --lattice-on-bone: rgba(160, 120, 48, 0.08); /* brass @ 8% on bone */
+  --lattice-on-dark: rgba(226, 210, 172, 0.12); /* pale brass @ 12% on tobacco */
+
+  /* ---------- Motion — calm, eased, no bounce ---------- */
+  --ease-standard: cubic-bezier(0.22, 0.61, 0.20, 1.00); /* @kind other */
+  --ease-out:      cubic-bezier(0.16, 0.84, 0.30, 1.00); /* @kind other */
+  --ease-in:       cubic-bezier(0.55, 0.06, 0.68, 0.19); /* @kind other */
+  --ease-inout:    cubic-bezier(0.65, 0.02, 0.22, 1.00); /* @kind other */
+
+  --duration-fast:   140ms; /* @kind other */
+  --duration-base:   240ms; /* @kind other */
+  --duration-slow:   420ms; /* @kind other */
+  --duration-reveal: 720ms; /* @kind other */
+
+  --transition-base: all var(--duration-base) var(--ease-standard); /* @kind other */
+  --transition-color: color var(--duration-fast) var(--ease-standard),
+                      background-color var(--duration-fast) var(--ease-standard),
+                      border-color var(--duration-fast) var(--ease-standard); /* @kind other */
+
+  /* ---------- Image treatment (Brand Board §06 — warm grade) ---------- */
+  --img-grade: saturate(0.92) contrast(1.02) brightness(1.01) sepia(0.06); /* @kind other */
+  --overlay-tobacco: linear-gradient(180deg, rgba(28,18,10,0) 0%, rgba(28,18,10,0.72) 100%); /* @kind other */
+  --overlay-read:    linear-gradient(180deg, rgba(28,18,10,0.10) 0%, rgba(28,18,10,0.55) 100%); /* @kind other */
+}
