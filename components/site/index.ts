@@ -4,4 +4,5 @@ export { Figure } from "./Figure";
 export { Header } from "./Header";
 export { Footer } from "./Footer";
 export { ProjectCard } from "./ProjectCard";
+export { EnquiryForm } from "./EnquiryForm";
 export * from "./icons";
