@@ -1,0 +1,226 @@
+/* ============================================================
+   SKG — Production global styles
+   Layered on top of the imported design-system CSS
+   (tokens/*.css + css/components.css). This file is imported
+   LAST so its :root overrides win.
+   ============================================================ */
+
+:root {
+  /* Bridge next/font variables into the SKG font tokens.
+     (Overrides the literal family stacks in tokens/typography.css.) */
+  --font-display: var(--font-playfair), "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-body: var(--font-libre), -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-dmmono), ui-monospace, "SF Mono", "Roboto Mono", Menlo, monospace;
+}
+
+/* Lenis smooth-scroll plumbing (no-op when Lenis is inactive / reduced motion). */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Thin, warm scrollbar (fine pointers only). */
+@media (pointer: fine) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--brass-300) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: var(--bone-500);
+    border-radius: 999px;
+    border: 3px solid var(--surface-page);
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--brass-400);
+  }
+}
+
+/* Accessible skip link. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: var(--z-toast);
+  background: var(--tobacco-800);
+  color: var(--bone-100);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ============================================================
+   Reveal-on-scroll (progressive enhancement).
+   Content is always in the DOM (SSR) — JS toggles visibility.
+   The .js gate ensures no-JS users see everything immediately.
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity var(--duration-reveal) var(--ease-out),
+      transform var(--duration-reveal) var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  html.js [data-reveal][data-revealed="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================================================
+   Responsive grid behaviour (ported verbatim from the prototype
+   ui_kits/website/index.html, plus a few new layout classes).
+   The page sections use inline grid templates; these collapse them.
+   ============================================================ */
+.header-menu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .site-nav,
+  .header-cta {
+    display: none !important;
+  }
+  .header-menu {
+    display: inline-flex !important;
+  }
+  .util-contact span:first-child {
+    display: none;
+  }
+  .hero-grid,
+  .manifesto-grid,
+  .featured-grid,
+  .detail-hero,
+  .narrative-grid,
+  .material-grid,
+  .contact-grid,
+  .cta-grid,
+  .split-grid,
+  .stay-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .divisions-grid,
+  .projects-grid,
+  .flow-grid,
+  .footer-grid,
+  .journal-grid,
+  .partners-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .hero-stats,
+  .spec-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .principle-row {
+    grid-template-columns: 0.2fr 1fr !important;
+  }
+  .principle-row p {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .divisions-grid,
+  .projects-grid,
+  .flow-grid,
+  .footer-grid,
+  .journal-grid,
+  .partners-grid,
+  .hero-stats,
+  .spec-grid,
+  .form-row,
+  .materials-row,
+  .detail-gallery {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-legal {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+/* Utility: a subtle warm radial glow used behind dark heroes. */
+.skg-glow {
+  background: radial-gradient(closest-side, rgba(160, 120, 48, 0.16), transparent 70%);
+  pointer-events: none;
+}
+
+/* Kinetic hero line mask (per-line reveal). */
+.kinetic-line {
+  display: block;
+  overflow: hidden;
+}
+
+/* ---- Interactive hover states (CSS, so cards/links can stay RSC) ---- */
+.project-card {
+  text-decoration: none;
+  transition:
+    transform var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard);
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+.project-card__arrow {
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.project-card:hover .project-card__arrow {
+  transform: translateX(3px);
+}
+
+.nav-link:hover[data-active="false"] {
+  color: var(--accent) !important;
+}
+.nav-link:hover .nav-link__underline {
+  width: 100% !important;
+}
+
+.footer-link:hover {
+  color: var(--bone-100) !important;
+}
+
+/* Link-styled buttons (Next <Link className="skg-btn">) nudge their icon. */
+a.skg-btn .skg-btn__icon {
+  transition: transform var(--duration-base) var(--ease-out);
+}
+a.skg-btn:hover .skg-btn__icon {
+  transform: translateX(3px);
+}
+
+/* Generic interactive lift used by approach/partnership tiles. */
+.lift {
+  transition:
+    transform var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard);
+}
+.lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
