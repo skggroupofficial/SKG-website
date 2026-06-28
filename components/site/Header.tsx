@@ -123,8 +123,8 @@ export function Header() {
             transition: "height var(--duration-base) var(--ease-standard)",
           }}
         >
-          <Link href="/" aria-label="SKG — home" style={{ display: "inline-flex" }}>
-            <Logo variant="wordmark" size={26} tone="tobacco" />
+          <Link href="/" aria-label="SKG — home" style={{ display: "inline-flex", alignItems: "center" }}>
+            <Logo variant="lockup" size={scrolled ? 44 : 52} alt="Shri Kuber Group" />
           </Link>
 
           <nav className="site-nav" style={{ display: "flex", alignItems: "center", gap: "2.2rem" }}>

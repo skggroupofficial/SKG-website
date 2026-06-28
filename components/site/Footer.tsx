@@ -29,7 +29,7 @@ export function Footer() {
           style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr 1fr 1.3fr", gap: "2.5rem" }}
         >
           <div style={{ display: "flex", flexDirection: "column", gap: "1.3rem", maxWidth: "32ch" }}>
-            <Logo variant="wordmark" size={30} tagline tone="bone" />
+            <Logo variant="lockup" size={88} alt="Shri Kuber Group" />
             <p
               style={{
                 fontFamily: "var(--font-display)",
