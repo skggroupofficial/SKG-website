@@ -12,7 +12,7 @@ import { brand } from "@/content/brand";
 export const metadata: Metadata = buildMetadata({
   title: "Contact",
   description:
-    "Talk to Shri Kuber Group about land, capital, partnership or a stay. Office on S.G. Highway, Ahmedabad.",
+    "Talk to Shri Kuber Group about land, capital, partnership or a stay. Office at #27 City Center Market, Hanumangarh.",
   path: "/contact",
 });
 
@@ -99,7 +99,7 @@ export default function ContactPage() {
 
             <Reveal delay={80}>
               <div style={{ display: "flex", flexDirection: "column", gap: "1.8rem" }}>
-                <Figure tone="dark" ratio="16 / 10" caption="Shri Kuber House · S.G. Highway" />
+                <Figure tone="dark" ratio="16 / 10" caption="SKG Office · City Center Market, Hanumangarh" />
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.3rem" }}>
                   <ContactRow icon={MapPin} label="Office">
                     {brand.address.lines.map((line) => (

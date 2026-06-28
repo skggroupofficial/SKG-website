@@ -16,11 +16,11 @@ import { faqLd } from "../lib/jsonld";
 const FAQ = [
   {
     q: "What does Shri Kuber Group do?",
-    a: "Shri Kuber Group (SKG) is a vertically integrated real estate developer based in Ahmedabad, Gujarat. We develop the land, build the structure in-house, and operate the hospitality within our developments — three disciplines under one accountable roof.",
+    a: "Shri Kuber Group (SKG) is a vertically integrated real estate developer based in Hanumangarh, Rajasthan. We develop the land, build the structure in-house, and operate the hospitality within our developments — three disciplines under one accountable roof.",
   },
   {
     q: "Where does SKG operate?",
-    a: "We develop across Gujarat — principally Ahmedabad and Gandhinagar — and, where a building deserves it, into Rajasthan. Our office is on S.G. Highway, Ahmedabad.",
+    a: "We develop across Rajasthan — principally from Hanumangarh — and, where a building deserves it, into Gujarat. Our office is at #27 City Center Market, Hanumangarh.",
   },
   {
     q: "What does 'develop, build, host' mean?",
@@ -28,7 +28,7 @@ const FAQ = [
   },
   {
     q: "Does SKG run its own hotels?",
-    a: "Yes. The Kuber, an 84-key house hotel in Ahmedabad, is operated end-to-end by SKG. The Linen House, a 36-key retreat in Udaipur, will be operated in-house as well.",
+    a: "Yes. The Kuber, an 84-key house hotel, is operated end-to-end by SKG. The Linen House, a 36-key retreat in Udaipur, will be operated in-house as well.",
   },
 ];
 
@@ -314,7 +314,7 @@ function QuoteBand() {
             &ldquo;We build places that outlast the conversation about them.&rdquo;
           </p>
           <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-on-dark-faint)" }}>
-            Rahul Kuber · Managing Director
+            Arvind Soni · Managing Director
           </span>
         </Reveal>
       </Container>

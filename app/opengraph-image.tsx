@@ -24,7 +24,7 @@ export default function OpengraphImage() {
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 24, letterSpacing: 6, textTransform: "uppercase", color: "#CBA968" }}>
           <span style={{ display: "flex" }}>Shri Kuber Group</span>
-          <span style={{ display: "flex" }}>Ahmedabad · Gujarat</span>
+          <span style={{ display: "flex" }}>Hanumangarh · Rajasthan</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -43,7 +43,7 @@ export default function OpengraphImage() {
             <div style={{ display: "flex", fontSize: 38, color: "#F4EFE4" }}>The Power of Trust</div>
           </div>
           <div style={{ display: "flex", fontSize: 22, letterSpacing: 4, textTransform: "uppercase", color: "#897764" }}>
-            shrikubergroup.com
+            skggroup.com
           </div>
         </div>
       </div>

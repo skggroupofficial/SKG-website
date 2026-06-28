@@ -13,12 +13,12 @@ import { brand } from "@/content/brand";
 export const metadata: Metadata = buildMetadata({
   title: "Leadership",
   description:
-    "Shri Kuber Group is led from Ahmedabad by one accountable team, under Managing Director Rahul Kuber — from the first survey to the fifteen-year guest.",
+    "Shri Kuber Group is led from Hanumangarh, Rajasthan by one accountable team, under Managing Director Arvind Soni — from the first survey to the fifteen-year guest.",
   path: "/leadership",
 });
 
 export default function LeadershipPage() {
-  const { intro, principal, firm } = leadership;
+  const { intro, principal, director, firm } = leadership;
 
   return (
     <>
@@ -91,6 +91,65 @@ export default function LeadershipPage() {
                     {para}
                   </p>
                 ))}
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "1.2rem", marginTop: "0.4rem" }}>
+                  <Link
+                    href={`tel:${principal.phoneHref}`}
+                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)" }}
+                  >
+                    <Phone size={15} weight="regular" color="var(--accent)" />
+                    {principal.phone}
+                  </Link>
+                  <Link
+                    href={`mailto:${principal.email}`}
+                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)" }}
+                  >
+                    <EnvelopeSimple size={15} weight="regular" color="var(--accent)" />
+                    {principal.email}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* Director */}
+      <section style={{ padding: "0 0 var(--section-pad-y)", borderTop: "1px solid var(--border-subtle)" }}>
+        <Container size="xl">
+          <Reveal>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "clamp(1.5rem, 3vw, 3rem)",
+                padding: "clamp(2rem, 3.5vw, 3rem)",
+                background: "var(--bone-300)",
+                border: "1px solid var(--border-subtle)",
+                marginTop: "clamp(2rem, 4vw, 3.5rem)",
+              }}
+            >
+              <Figure tone="dark" ratio="1 / 1" caption="" style={{ width: "clamp(80px, 10vw, 120px)", flexShrink: 0 }} />
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                <Eyebrow dash>{director.role}</Eyebrow>
+                <h2 className="skg-display" style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.2rem)", margin: 0 }}>
+                  {director.name}
+                </h2>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "1.2rem", marginTop: "0.4rem" }}>
+                  <Link
+                    href={`tel:${director.phoneHref}`}
+                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)" }}
+                  >
+                    <Phone size={15} weight="regular" color="var(--accent)" />
+                    {director.phone}
+                  </Link>
+                  <Link
+                    href={`mailto:${director.email}`}
+                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)" }}
+                  >
+                    <EnvelopeSimple size={15} weight="regular" color="var(--accent)" />
+                    {director.email}
+                  </Link>
+                </div>
               </div>
             </div>
           </Reveal>

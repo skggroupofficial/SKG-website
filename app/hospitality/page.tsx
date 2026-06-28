@@ -13,7 +13,7 @@ import { breadcrumbLd, projectLd } from "@/lib/jsonld";
 export const metadata: Metadata = buildMetadata({
   title: "Hospitality",
   description:
-    "SKG operates what it builds — The Kuber, an 84-key house hotel in Ahmedabad, and The Linen House, a 36-key haveli retreat in Udaipur. Run in-house.",
+    "SKG operates what it builds — The Kuber, an 84-key house hotel, and The Linen House, a 36-key haveli retreat in Udaipur. Run in-house.",
   path: "/hospitality",
 });
 

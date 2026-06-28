@@ -56,7 +56,7 @@ export async function POST(req: Request) {
       const resend = new Resend(key);
       await resend.emails.send({
         from: process.env.ENQUIRY_FROM || "SKG Website <onboarding@resend.dev>",
-        to: process.env.ENQUIRY_TO || "info@shrikubergroup.com",
+        to: process.env.ENQUIRY_TO || "contact@skggroup.com",
         replyTo: data.email,
         subject: "Enquiry — " + data.name,
         text,

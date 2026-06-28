@@ -1,19 +1,30 @@
 // ============================================================
-// SKG — leadership / firm narrative (launch content)
+// SKG — leadership / firm narrative
 // ============================================================
 
 export const leadership = {
   intro:
-    "Shri Kuber Group is led from Ahmedabad by a single team that carries a project from the first survey to the fifteen-year guest. We do not hand the building to someone else and the operation to a third party — the people who underwrite the land are accountable to the people who live and stay in what we build.",
+    "Shri Kuber Group is led from Hanumangarh, Rajasthan by a partnership that carries a project from the first survey to the fifteen-year guest. We do not hand the building to someone else and the operation to a third party — the people who underwrite the land are accountable to the people who live and stay in what we build.",
 
   principal: {
-    name: "Rahul Kuber",
+    name: "Arvind Soni",
     role: "Managing Director",
+    phone: "+91 92610 00007",
+    phoneHref: "+919261000007",
+    email: "arvind@skggroup.com",
     quote: "We build places that outlast the conversation about them.",
     bio: [
-      "Rahul Kuber founded the firm on a simple discipline: measure success in a building's tenth year, not its opening week. Under his direction SKG assembled the land, the construction capability, and the hospitality operation under one roof — so that no decision is made by someone who will not have to answer for it later.",
-      "He keeps the firm small enough that the partner who approves a joinery detail is the same partner who reads the guest's letter about it two years on.",
+      "Arvind Soni has led Shri Kuber Group through more than two decades of real estate development across Rajasthan. Under his direction SKG assembled the land acquisition expertise, the in-house construction capability, and the hospitality operation under one roof — so that no decision is made by someone who will not have to answer for it later.",
+      "He keeps the firm grounded in a simple discipline: measure success in a building's tenth year, not its opening week. The partner who approves a structural detail is the same partner who reads the occupant's letter about it two years on.",
     ],
+  },
+
+  director: {
+    name: "Om Soni",
+    role: "Director",
+    phone: "+91 92610 00000",
+    phoneHref: "+919261000000",
+    email: "Omsoni@skggroup.com",
   },
 
   firm: [
@@ -24,8 +35,8 @@ export const leadership = {
     },
     {
       no: "02",
-      title: "Rooted in Ahmedabad",
-      body: "We develop ground we know — across Gujarat and, where the building deserves it, into Rajasthan. Local stone, local trades, local accountability.",
+      title: "Rooted in Hanumangarh",
+      body: "We develop ground we know — across Rajasthan and, where the building deserves it, into Gujarat. Local stone, local trades, local accountability.",
     },
     {
       no: "03",

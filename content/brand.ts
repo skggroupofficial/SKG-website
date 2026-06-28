@@ -1,39 +1,36 @@
 // ============================================================
 // SKG — brand facts (single source for copy, contact, SEO)
-// NOTE: launch content. Swap real values when confirmed.
 // ============================================================
 
 export const brand = {
   name: "Shri Kuber Group",
   short: "SKG",
-  legalName: "Shri Kuber Group",
+  legalName: "Shri Kuber Group (Partnership Firm)",
   tagline: "The Power of Trust",
   statement: "Ground. Form. Experience.",
   description:
-    "Shri Kuber Group is a vertically integrated real estate developer in Ahmedabad — we develop the land, build the structure in-house, and operate the hospitality within our developments. One team, accountable from the first survey to the fifteen-year guest.",
+    "Shri Kuber Group is a vertically integrated real estate developer based in Hanumangarh, Rajasthan — we develop the land, build the structure in-house, and operate the hospitality within our developments. One team, accountable from the first survey to the fifteen-year guest.",
   shortDescription:
-    "A vertically integrated real estate developer in Ahmedabad — develop, build and host under one accountable roof.",
+    "A vertically integrated real estate developer in Hanumangarh, Rajasthan — develop, build and host under one accountable roof.",
 
-  // Contact (launch placeholder — confirm before go-live)
-  phone: "+91 98765 43210",
-  phoneHref: "+919876543210",
-  email: "info@shrikubergroup.com",
-  web: "www.shrikubergroup.com",
-  url: "https://www.shrikubergroup.com",
+  phone: "+91 92610 92610",
+  phoneHref: "+919261092610",
+  email: "contact@skggroup.com",
+  web: "www.skggroup.com",
+  url: "https://www.skggroup.com",
 
   address: {
     lines: [
-      "Shri Kuber House, 5th Floor",
-      "Nr. Pakwan Cross Road",
-      "S.G. Highway, Ahmedabad — 380051",
-      "Gujarat, India",
+      "#27 City Center Market",
+      "Hanumangarh — 335513",
+      "Rajasthan, India",
     ],
-    street: "Shri Kuber House, 5th Floor, Nr. Pakwan Cross Road, S.G. Highway",
-    locality: "Ahmedabad",
-    region: "Gujarat",
-    postalCode: "380051",
+    street: "#27 City Center Market",
+    locality: "Hanumangarh",
+    region: "Rajasthan",
+    postalCode: "335513",
     country: "IN",
-    geo: { lat: 23.03, lng: 72.51 },
+    geo: { lat: 29.5815, lng: 74.3267 },
   },
 
   hoursText: "Mon–Sat · 10:00–18:30 IST",
@@ -43,8 +40,8 @@ export const brand = {
     closes: "18:30",
   },
 
-  founder: "Rahul Kuber",
-  foundingYear: "2008",
+  founder: "Arvind Soni",
+  foundingYear: "2001",
 
   // Social / sameAs (add real handles when available)
   social: [
