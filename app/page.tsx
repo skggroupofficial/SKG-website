@@ -67,28 +67,34 @@ function Hero() {
           }}
         >
           <div style={{ display: "flex", flexDirection: "column", gap: "1.6rem" }}>
-            <Eyebrow dash tone="on-dark">
-              Develop · Build · Host
-            </Eyebrow>
+            <Reveal delay={80}>
+              <Eyebrow dash tone="on-dark">
+                Develop · Build · Host
+              </Eyebrow>
+            </Reveal>
             <KineticHeading
               as="h1"
               className="skg-display"
               style={{ fontSize: "clamp(2.8rem, 6.4vw, 5.4rem)", lineHeight: 0.98, color: "var(--bone-100)" }}
               lines={["Built to last beyond", "the current cycle."]}
             />
-            <p className="skg-body skg-body--lead" style={{ maxWidth: "46ch", color: "var(--text-on-dark-muted)" }}>
-              Shri Kuber Group is a vertically integrated real estate firm — we acquire the ground, build the
-              structure, and operate the hospitality within it. One team, accountable from the first survey to the
-              fifteen-year guest.
-            </p>
-            <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap", marginTop: "0.4rem" }}>
-              <Link href="/projects" className="skg-btn skg-btn--accent">
-                View projects <ArrowRight size={15} weight="bold" className="skg-btn__icon" />
-              </Link>
-              <Link href="/approach" className="skg-btn skg-btn--inverse">
-                Our approach
-              </Link>
-            </div>
+            <Reveal delay={500}>
+              <p className="skg-body skg-body--lead" style={{ maxWidth: "46ch", color: "var(--text-on-dark-muted)" }}>
+                Shri Kuber Group is a vertically integrated real estate firm — we acquire the ground, build the
+                structure, and operate the hospitality within it. One team, accountable from the first survey to the
+                fifteen-year guest.
+              </p>
+            </Reveal>
+            <Reveal delay={620}>
+              <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap", marginTop: "0.4rem" }}>
+                <Link href="/projects" className="skg-btn skg-btn--accent">
+                  View projects <ArrowRight size={15} weight="bold" className="skg-btn__icon" />
+                </Link>
+                <Link href="/approach" className="skg-btn skg-btn--inverse">
+                  Our approach
+                </Link>
+              </div>
+            </Reveal>
           </div>
 
           <Reveal delay={120}>

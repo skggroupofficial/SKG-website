@@ -26,7 +26,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(function Inp
   const inputId = id || auto;
   const isInvalid = invalid || !!error;
   return (
-    <div className="skg-field">
+    <div className={cn("skg-field", isInvalid && "field-error")}>
       {label && (
         <label className="skg-field__label" htmlFor={inputId}>
           {label}

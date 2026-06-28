@@ -105,7 +105,7 @@ export function EnquiryForm() {
           <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.3rem" }}>
             <Input
               label="Full name"
-              placeholder="Rahul Kuber"
+              placeholder="Your name"
               required
               autoComplete="name"
               {...register("name")}

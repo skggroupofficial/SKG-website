@@ -6,6 +6,7 @@ import { Container } from "@/components/site";
 import { JsonLd } from "@/components/site/JsonLd";
 import { ArrowLeft, ArrowRight } from "@/components/site/icons";
 import { Reveal } from "@/components/motion/Reveal";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { articles, articleSlugs, getArticle } from "@/content/journal";
 import { buildMetadata } from "@/lib/seo";
 import { articleLd, breadcrumbLd } from "@/lib/jsonld";
@@ -55,6 +56,7 @@ export default async function ArticlePage({
 
   return (
     <>
+      <ScrollProgress />
       <JsonLd
         data={[
           articleLd(a),

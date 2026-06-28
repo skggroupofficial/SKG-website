@@ -7,6 +7,7 @@ import { Logo, IconButton } from "../ds";
 import { primaryNav } from "../../content/navigation";
 import { brand } from "../../content/brand";
 import { ArrowRight, MapPin, List, X } from "./icons";
+import { AnimatePresence, motion } from "framer-motion";
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -86,10 +87,10 @@ export function Header() {
           className="util-contact"
         >
           <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
-            <MapPin size={13} style={{ color: "var(--brass-300)" }} /> Ahmedabad · Gujarat
+            <MapPin size={13} style={{ color: "var(--brass-300)" }} /> {brand.address.locality} · {brand.address.region}
           </span>
           <span style={{ display: "inline-flex", alignItems: "center", gap: "1.4rem" }}>
-            <a href={`tel:${brand.phoneHref}`} style={{ color: "inherit" }}>
+            <a href={`tel:${brand.phoneHref}`} style={{ color: "inherit", whiteSpace: "nowrap" }}>
               {brand.phone}
             </a>
             <a href={`mailto:${brand.email}`} style={{ color: "var(--brass-300)" }}>
@@ -161,41 +162,64 @@ export function Header() {
         </div>
 
         {/* Mobile menu */}
-        {open && (
-          <div
-            style={{
-              borderTop: "1px solid var(--border-subtle)",
-              padding: "1rem var(--gutter) 1.6rem",
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.2rem",
-              background: "var(--surface-page)",
-            }}
-          >
-            {primaryNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.28, ease: [0.22, 0.61, 0.20, 1] }}
+              style={{ overflow: "hidden" }}
+            >
+              <div
                 style={{
-                  padding: "0.85rem 0",
-                  borderBottom: "1px solid var(--border-subtle)",
-                  fontFamily: "var(--font-display)",
-                  fontSize: "1.4rem",
-                  color: isActive(pathname, item.href) ? "var(--accent)" : "var(--text-primary)",
+                  borderTop: "1px solid var(--border-subtle)",
+                  padding: "1rem var(--gutter) 1.6rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.2rem",
+                  background: "var(--surface-page)",
                 }}
               >
-                {item.label}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="skg-btn skg-btn--accent skg-btn--block"
-              style={{ marginTop: "1rem", textDecoration: "none" }}
-            >
-              Enquire <ArrowRight size={16} weight="bold" className="skg-btn__icon" />
-            </Link>
-          </div>
-        )}
+                {primaryNav.map((item, i) => (
+                  <motion.div
+                    key={item.href}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.06 + i * 0.05, duration: 0.22, ease: [0.22, 0.61, 0.20, 1] }}
+                  >
+                    <Link
+                      href={item.href}
+                      style={{
+                        display: "block",
+                        padding: "0.85rem 0",
+                        borderBottom: "1px solid var(--border-subtle)",
+                        fontFamily: "var(--font-display)",
+                        fontSize: "1.4rem",
+                        color: isActive(pathname, item.href) ? "var(--accent)" : "var(--text-primary)",
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.06 + primaryNav.length * 0.05, duration: 0.22 }}
+                >
+                  <Link
+                    href="/contact"
+                    className="skg-btn skg-btn--accent skg-btn--block"
+                    style={{ marginTop: "1rem", textDecoration: "none" }}
+                  >
+                    Enquire <ArrowRight size={16} weight="bold" className="skg-btn__icon" />
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );

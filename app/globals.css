@@ -200,9 +200,23 @@ html.lenis body {
   width: 100% !important;
 }
 
+.footer-link {
+  position: relative;
+}
 .footer-link:hover {
   color: var(--bone-100) !important;
 }
+.footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 1px;
+  width: 0;
+  background: var(--brass-300);
+  transition: width var(--duration-base) var(--ease-out);
+}
+.footer-link:hover::after { width: 100%; }
 
 /* Link-styled buttons (Next <Link className="skg-btn">) nudge their icon. */
 a.skg-btn .skg-btn__icon {
@@ -210,6 +224,32 @@ a.skg-btn .skg-btn__icon {
 }
 a.skg-btn:hover .skg-btn__icon {
   transform: translateX(3px);
+}
+
+/* Page entrance animation */
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+.page-enter {
+  animation: fadeInPage 0.5s var(--ease-out) both;
+}
+
+/* Form field error shake */
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%     { transform: translateX(-6px); }
+  40%     { transform: translateX(6px); }
+  60%     { transform: translateX(-4px); }
+  80%     { transform: translateX(4px); }
+}
+.field-error { animation: shake 0.4s var(--ease-standard); }
+
+/* Logo smooth size transition when header shrinks on scroll */
+.skg-logo--lockup {
+  transition:
+    height var(--duration-base) var(--ease-standard),
+    width var(--duration-base) var(--ease-standard);
 }
 
 /* Generic interactive lift used by approach/partnership tiles. */

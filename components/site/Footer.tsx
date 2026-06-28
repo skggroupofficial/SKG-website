@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Logo, Divider } from "../ds";
+import { Reveal } from "../motion/Reveal";
 import { footerNav } from "../../content/navigation";
 import { brand } from "../../content/brand";
 
@@ -28,91 +29,97 @@ export function Footer() {
           className="footer-grid"
           style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr 1fr 1.3fr", gap: "2.5rem" }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.3rem", maxWidth: "32ch" }}>
-            <Logo variant="lockup" size={88} alt="Shri Kuber Group" />
-            <p
-              style={{
-                fontFamily: "var(--font-display)",
-                fontStyle: "italic",
-                fontSize: "1.15rem",
-                lineHeight: 1.4,
-                color: "var(--text-on-dark-muted)",
-              }}
-            >
-              We build places that outlast the conversation about them.
-            </p>
-          </div>
-
-          {footerNav.map((col) => (
-            <div key={col.title} style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
-              <span
+          <Reveal>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.3rem", maxWidth: "32ch" }}>
+              <Logo variant="lockup" size={88} alt="Shri Kuber Group" />
+              <p
                 style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "10.5px",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "var(--brass-300)",
+                  fontFamily: "var(--font-display)",
+                  fontStyle: "italic",
+                  fontSize: "1.15rem",
+                  lineHeight: 1.4,
+                  color: "var(--text-on-dark-muted)",
                 }}
               >
-                {col.title}
-              </span>
-              {col.items.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="footer-link"
+                We build places that outlast the conversation about them.
+              </p>
+            </div>
+          </Reveal>
+
+          {footerNav.map((col, i) => (
+            <Reveal key={col.title} delay={100 + i * 100}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+                <span
                   style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "0.95rem",
-                    color: "var(--text-on-dark-muted)",
-                    transition: "color var(--duration-fast) var(--ease-standard)",
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "10.5px",
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "var(--brass-300)",
                   }}
                 >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
+                  {col.title}
+                </span>
+                {col.items.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="footer-link"
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "0.95rem",
+                      color: "var(--text-on-dark-muted)",
+                      transition: "color var(--duration-fast) var(--ease-standard)",
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Office details */}
-        <div
-          style={{
-            marginTop: "2.5rem",
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "1.5rem 3rem",
-            fontFamily: "var(--font-body)",
-            fontSize: "0.9rem",
-            lineHeight: 1.7,
-            color: "var(--text-on-dark-muted)",
-          }}
-        >
-          <address style={{ fontStyle: "normal" }}>
-            {brand.address.lines.map((l, i) => (
-              <div key={i}>{l}</div>
-            ))}
-          </address>
+        <Reveal delay={200}>
           <div
             style={{
+              marginTop: "2.5rem",
               display: "flex",
-              flexDirection: "column",
-              gap: "0.3rem",
-              fontFamily: "var(--font-mono)",
-              fontSize: "0.78rem",
-              letterSpacing: "0.04em",
-              color: "var(--brass-300)",
+              flexWrap: "wrap",
+              gap: "1.5rem 3rem",
+              fontFamily: "var(--font-body)",
+              fontSize: "0.9rem",
+              lineHeight: 1.7,
+              color: "var(--text-on-dark-muted)",
             }}
           >
-            <a href={`tel:${brand.phoneHref}`} style={{ color: "inherit" }}>
-              {brand.phone}
-            </a>
-            <a href={`mailto:${brand.email}`} style={{ color: "inherit" }}>
-              {brand.email}
-            </a>
-            <span style={{ color: "var(--text-on-dark-faint)" }}>{brand.hoursText}</span>
+            <address style={{ fontStyle: "normal" }}>
+              {brand.address.lines.map((l, i) => (
+                <div key={i}>{l}</div>
+              ))}
+            </address>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.3rem",
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.78rem",
+                letterSpacing: "0.04em",
+                color: "var(--brass-300)",
+              }}
+            >
+              <a href={`tel:${brand.phoneHref}`} style={{ color: "inherit" }}>
+                {brand.phone}
+              </a>
+              <a href={`mailto:${brand.email}`} style={{ color: "inherit" }}>
+                {brand.email}
+              </a>
+              <span style={{ color: "var(--text-on-dark-faint)" }}>{brand.hoursText}</span>
+            </div>
           </div>
-        </div>
+        </Reveal>
 
         <div style={{ margin: "3rem 0 1.6rem" }}>
           <Divider variant="sparkle" />

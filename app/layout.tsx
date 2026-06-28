@@ -80,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <SmoothScroll>
           <Header />
-          <main id="main">{children}</main>
+          <main id="main" className="page-enter">{children}</main>
           <Footer />
         </SmoothScroll>
         <Analytics />
