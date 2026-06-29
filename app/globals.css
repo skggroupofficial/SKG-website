@@ -245,8 +245,11 @@ a.skg-btn:hover .skg-btn__icon {
 }
 .field-error { animation: shake 0.4s var(--ease-standard); }
 
-/* Logo smooth size transition when header shrinks on scroll */
+/* Logo: prevent flex-stretch distortion; smooth header size transition */
 .skg-logo--lockup {
+  display: block;       /* remove inline-level stretch behaviour */
+  align-self: flex-start; /* opt out of flex cross-axis stretching */
+  max-width: 100%;      /* never overflow narrow containers */
   transition:
     height var(--duration-base) var(--ease-standard),
     width var(--duration-base) var(--ease-standard);
