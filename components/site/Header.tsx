@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Logo, IconButton } from "../ds";
 import { primaryNav } from "../../content/navigation";
 import { brand } from "../../content/brand";
-import { ArrowRight, MapPin, List, X } from "./icons";
+import { ArrowRight, MapPin, Phone, EnvelopeSimple, List, X } from "./icons";
 import { AnimatePresence, motion } from "framer-motion";
 
 function isActive(pathname: string, href: string) {
@@ -61,15 +61,19 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the mobile menu on route change.
+  // Close menu on route change
   React.useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
   return (
     <header style={{ position: "sticky", top: 0, zIndex: 100 }}>
-      {/* Utility strip */}
-      <div style={{ background: "var(--tobacco-800)", color: "var(--text-on-dark-muted)" }}>
+
+      {/* ── Utility strip — desktop only (hidden on mobile via .util-bar CSS) ── */}
+      <div
+        className="util-bar"
+        style={{ background: "var(--tobacco-800)", color: "var(--text-on-dark-muted)" }}
+      >
         <div
           style={{
             maxWidth: "var(--container-xl)",
@@ -84,10 +88,10 @@ export function Header() {
             letterSpacing: "0.14em",
             textTransform: "uppercase",
           }}
-          className="util-contact"
         >
           <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
-            <MapPin size={13} style={{ color: "var(--brass-300)" }} /> {brand.address.locality} · {brand.address.region}
+            <MapPin size={13} style={{ color: "var(--brass-300)" }} />
+            {brand.address.locality} · {brand.address.region}
           </span>
           <span style={{ display: "inline-flex", alignItems: "center", gap: "1.4rem" }}>
             <a href={`tel:${brand.phoneHref}`} style={{ color: "inherit", whiteSpace: "nowrap" }}>
@@ -100,18 +104,19 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main bar */}
+      {/* ── Main bar ── */}
       <div
         style={{
-          background: "rgba(244,239,228,0.92)",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
+          background: "rgba(244,239,228,0.96)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
           borderBottom: "1px solid var(--border-subtle)",
           boxShadow: scrolled ? "var(--shadow-sm)" : "none",
           transition: "box-shadow var(--duration-base) var(--ease-standard)",
         }}
       >
         <div
+          className="header-inner"
           style={{
             maxWidth: "var(--container-xl)",
             margin: "0 auto",
@@ -140,11 +145,7 @@ export function Header() {
           </nav>
 
           <div className="header-cta" style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <Link
-              href="/contact"
-              className="skg-btn skg-btn--accent skg-btn--sm"
-              style={{ textDecoration: "none" }}
-            >
+            <Link href="/contact" className="skg-btn skg-btn--accent skg-btn--sm" style={{ textDecoration: "none" }}>
               Enquire <ArrowRight size={15} weight="bold" className="skg-btn__icon" />
             </Link>
           </div>
@@ -161,60 +162,122 @@ export function Header() {
           </span>
         </div>
 
-        {/* Mobile menu */}
+        {/* ── Mobile menu ── */}
         <AnimatePresence>
           {open && (
             <motion.div
+              key="mobile-menu"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.28, ease: [0.22, 0.61, 0.20, 1] }}
+              transition={{ duration: 0.26, ease: [0.22, 0.61, 0.20, 1] }}
               style={{ overflow: "hidden" }}
             >
               <div
                 style={{
                   borderTop: "1px solid var(--border-subtle)",
-                  padding: "1rem var(--gutter) 1.6rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.2rem",
                   background: "var(--surface-page)",
+                  paddingBottom: "1.6rem",
                 }}
               >
-                {primaryNav.map((item, i) => (
-                  <motion.div
-                    key={item.href}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.06 + i * 0.05, duration: 0.22, ease: [0.22, 0.61, 0.20, 1] }}
-                  >
-                    <Link
-                      href={item.href}
-                      style={{
-                        display: "block",
-                        padding: "0.85rem 0",
-                        borderBottom: "1px solid var(--border-subtle)",
-                        fontFamily: "var(--font-display)",
-                        fontSize: "1.4rem",
-                        color: isActive(pathname, item.href) ? "var(--accent)" : "var(--text-primary)",
-                      }}
+                {/* Nav items */}
+                {primaryNav.map((item, i) => {
+                  const active = isActive(pathname, item.href);
+                  return (
+                    <motion.div
+                      key={item.href}
+                      initial={{ opacity: 0, x: -8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.04 + i * 0.04, duration: 0.2, ease: [0.22, 0.61, 0.20, 1] }}
                     >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        href={item.href}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          padding: "0.95rem var(--gutter)",
+                          borderBottom: "1px solid var(--border-subtle)",
+                          fontFamily: "var(--font-display)",
+                          fontSize: "1.3rem",
+                          lineHeight: 1,
+                          color: active ? "var(--accent)" : "var(--text-primary)",
+                          background: active ? "rgba(160,120,48,0.04)" : "transparent",
+                          textDecoration: "none",
+                        }}
+                      >
+                        {item.label}
+                        {active && (
+                          <span aria-hidden="true" style={{ color: "var(--accent)", fontSize: "0.7rem" }}>✦</span>
+                        )}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+
+                {/* Enquire CTA */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.06 + primaryNav.length * 0.05, duration: 0.22 }}
+                  transition={{ delay: 0.04 + primaryNav.length * 0.04, duration: 0.2 }}
+                  style={{ padding: "1.1rem var(--gutter) 0" }}
                 >
                   <Link
                     href="/contact"
                     className="skg-btn skg-btn--accent skg-btn--block"
-                    style={{ marginTop: "1rem", textDecoration: "none" }}
+                    style={{ textDecoration: "none" }}
                   >
                     Enquire <ArrowRight size={16} weight="bold" className="skg-btn__icon" />
                   </Link>
+                </motion.div>
+
+                {/* Contact strip — replaces the hidden utility bar */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.04 + (primaryNav.length + 1) * 0.04, duration: 0.2 }}
+                  style={{
+                    margin: "1.1rem var(--gutter) 0",
+                    paddingTop: "1rem",
+                    borderTop: "1px solid var(--border-subtle)",
+                    display: "flex",
+                    gap: "1.2rem 2rem",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <a
+                    href={`tel:${brand.phoneHref}`}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.45rem",
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.8rem",
+                      letterSpacing: "0.04em",
+                      color: "var(--text-secondary)",
+                      textDecoration: "none",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    <Phone size={13} weight="regular" style={{ color: "var(--accent)", flexShrink: 0 }} />
+                    {brand.phone}
+                  </a>
+                  <a
+                    href={`mailto:${brand.email}`}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.45rem",
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.8rem",
+                      letterSpacing: "0.04em",
+                      color: "var(--text-secondary)",
+                      textDecoration: "none",
+                    }}
+                  >
+                    <EnvelopeSimple size={13} weight="regular" style={{ color: "var(--accent)", flexShrink: 0 }} />
+                    {brand.email}
+                  </a>
                 </motion.div>
               </div>
             </motion.div>

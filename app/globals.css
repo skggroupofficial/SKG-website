@@ -98,15 +98,25 @@ html.lenis body {
 }
 
 @media (max-width: 900px) {
+  /* Hide the utility strip entirely — phone/email move into the mobile menu */
+  .util-bar {
+    display: none !important;
+  }
+  /* Lock the main bar to a fixed height so it never jumps while scrolling */
+  .header-inner {
+    height: 62px !important;
+    transition: none !important;
+  }
+  /* Shrink the logo to fit the smaller bar */
+  .header-inner .skg-logo--lockup {
+    height: 36px !important;
+  }
   .site-nav,
   .header-cta {
     display: none !important;
   }
   .header-menu {
     display: inline-flex !important;
-  }
-  .util-contact span:first-child {
-    display: none;
   }
   .hero-grid,
   .manifesto-grid,
