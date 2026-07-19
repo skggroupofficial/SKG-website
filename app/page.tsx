@@ -333,7 +333,7 @@ function QuoteBand() {
             &ldquo;We build places that outlast the conversation about them.&rdquo;
           </p>
           <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-on-dark-faint)" }}>
-            Arvind Soni · Managing Director
+            Om Soni · Managing Director
           </span>
         </Reveal>
       </Container>

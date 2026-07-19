@@ -13,7 +13,7 @@ import { brand } from "@/content/brand";
 export const metadata: Metadata = buildMetadata({
   title: "Leadership",
   description:
-    "Shri Kuber Group is led from Hanumangarh, Rajasthan by one accountable team, under Managing Director Arvind Soni — from the first survey to the fifteen-year guest.",
+    "Shri Kuber Group is led from Hanumangarh, Rajasthan by one accountable team, under Managing Director Om Soni — from the first survey to the fifteen-year guest.",
   path: "/leadership",
 });
 
