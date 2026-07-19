@@ -32,9 +32,9 @@ const OFFERS = [
   {
     icon: HandHeart,
     title: "For investors",
-    body: "We are long-horizon and material-honest. Our average hold is eighteen years, and we operate what we build — so the return is earned from a working asset, not a quick exit.",
+    body: "We are long-horizon and material-honest. We hold what we build rather than exit at completion, and we operate it ourselves — so the return is earned from a working asset, not a quick sale.",
     points: [
-      "Eighteen-year average hold",
+      "Long-horizon hold, not a quick exit",
       "In-house operation, not an exit play",
       "Material choices made to age",
     ],
@@ -58,7 +58,7 @@ const FAQ = [
   },
   {
     q: "What does SKG underwrite for investors?",
-    a: "We underwrite the ground for the long horizon — assembling parcels, securing approvals and shaping the masterplan before a line is built. Because we build in-house and operate the hospitality ourselves, the investment case rests on a working asset held for an average of eighteen years, not a rapid exit.",
+    a: "We underwrite the ground for the long horizon — assembling parcels, securing approvals and shaping the masterplan before a line is built. Because we build in-house and intend to operate the hospitality ourselves, the investment case rests on a working asset held for the long term, not a rapid exit.",
   },
   {
     q: "Why does single accountability reduce risk?",

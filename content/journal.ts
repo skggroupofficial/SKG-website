@@ -73,7 +73,7 @@ export const articles: Article[] = [
     slug: "measured-in-year-ten",
     title: "Measured in year ten",
     excerpt:
-      "Our long-horizon test for every project — and why an 18-year average hold is a feature, not a constraint.",
+      "Our long-horizon test for every project — and why a slow hold is a feature, not a constraint.",
     category: "Long horizon",
     date: "2025-12-09",
     readingTime: "4 min",
@@ -86,7 +86,7 @@ export const articles: Article[] = [
       { type: "heading", text: "What the long horizon changes" },
       {
         type: "paragraph",
-        text: "It changes what you underwrite, what you build, and what you keep. We hold for an average of eighteen years. That is not patience for its own sake; it is the only honest way to be accountable for how a place ages.",
+        text: "It changes what you underwrite, what you build, and what you keep. We do not sell a project the day it is finished; we stay accountable for it. That is not patience for its own sake; it is the only honest way to be accountable for how a place ages.",
       },
       {
         type: "paragraph",

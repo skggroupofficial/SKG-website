@@ -39,6 +39,7 @@ export default async function ProjectDetailPage({
   if (!p) notFound();
   const next = getNextProject(slug);
   const live = p.status.startsWith("Now");
+  const gallery = p.gallery ?? [];
 
   return (
     <>
@@ -93,7 +94,14 @@ export default async function ProjectDetailPage({
               </div>
             </div>
             <Reveal delay={80}>
-              <Figure tone={p.tone} ratio="4 / 3" caption={p.caption} priority />
+              <Figure
+                tone={p.tone}
+                ratio="4 / 3"
+                src={p.image?.src}
+                alt={p.image?.alt ?? p.name}
+                caption={p.caption}
+                priority
+              />
             </Reveal>
           </div>
         </Container>
@@ -128,29 +136,55 @@ export default async function ProjectDetailPage({
               </p>
             </div>
           </div>
-          <div className="detail-gallery" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", marginTop: "clamp(2.5rem, 4vw, 3.5rem)" }}>
-            <Reveal>
-              <Figure tone="light" ratio="1 / 1" caption="Materiality · limestone & timber" />
-            </Reveal>
-            <Reveal delay={90}>
-              <Figure tone="dark" ratio="1 / 1" caption="Interior atmosphere · warm grade" />
-            </Reveal>
-          </div>
+          {gallery.length > 0 && (
+            <div className="detail-gallery" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", marginTop: "clamp(2.5rem, 4vw, 3.5rem)" }}>
+              {gallery.map((g, i) => (
+                <Reveal key={g.src} delay={i * 70}>
+                  <Figure tone={p.tone} ratio="1 / 1" src={g.src} alt={g.alt} caption={g.caption ?? null} />
+                </Reveal>
+              ))}
+            </div>
+          )}
         </Container>
       </section>
 
-      {/* Next project */}
+      {/* Next project / pipeline */}
       <section style={{ padding: "var(--section-pad-y-tight) 0", borderTop: "1px solid var(--border-subtle)", background: "var(--bone-300)" }}>
         <Container size="xl">
-          <Link href={`/projects/${next.slug}`} className="lift" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1.5rem", padding: "clamp(1.4rem, 3vw, 2rem)", background: "var(--bone-100)", border: "1px solid var(--border-subtle)" }}>
-            <span style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-              <Eyebrow dash>Next project</Eyebrow>
-              <span className="skg-display" style={{ fontSize: "clamp(1.8rem, 3.6vw, 2.8rem)", color: "var(--text-primary)" }}>{next.name}</span>
-            </span>
-            <span style={{ color: "var(--accent)", display: "inline-flex" }} className="project-card__arrow">
-              <ArrowRight size={32} />
-            </span>
-          </Link>
+          {next ? (
+            <Link href={`/projects/${next.slug}`} className="lift" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1.5rem", padding: "clamp(1.4rem, 3vw, 2rem)", background: "var(--bone-100)", border: "1px solid var(--border-subtle)" }}>
+              <span style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                <Eyebrow dash>Next project</Eyebrow>
+                <span className="skg-display" style={{ fontSize: "clamp(1.8rem, 3.6vw, 2.8rem)", color: "var(--text-primary)" }}>{next.name}</span>
+              </span>
+              <span style={{ color: "var(--accent)", display: "inline-flex" }} className="project-card__arrow">
+                <ArrowRight size={32} />
+              </span>
+            </Link>
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: "1.5rem",
+                flexWrap: "wrap",
+                padding: "clamp(1.4rem, 3vw, 2rem)",
+                background: "var(--bone-100)",
+                border: "1px solid var(--border-subtle)",
+              }}
+            >
+              <span style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                <Eyebrow dash>What&rsquo;s next</Eyebrow>
+                <span className="skg-display" style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: "var(--text-primary)" }}>
+                  Bring us the next piece of ground.
+                </span>
+              </span>
+              <Link href="/contact" className="skg-btn skg-btn--accent">
+                Start a conversation <ArrowRight size={15} weight="bold" className="skg-btn__icon" />
+              </Link>
+            </div>
+          )}
         </Container>
       </section>
     </>

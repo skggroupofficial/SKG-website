@@ -13,6 +13,10 @@ export const leadership = {
     phoneHref: "+919261000007",
     email: "arvind@skggroup.com",
     quote: "We build places that outlast the conversation about them.",
+    photo: {
+      src: "/images/leadership/arvind-soni.jpg",
+      alt: "Arvind Soni, Managing Director of Shri Kuber Group",
+    },
     bio: [
       "Arvind Soni has led Shri Kuber Group through more than two decades of real estate development across Rajasthan. Under his direction SKG assembled the land acquisition expertise, the in-house construction capability, and the hospitality operation under one roof — so that no decision is made by someone who will not have to answer for it later.",
       "He keeps the firm grounded in a simple discipline: measure success in a building's tenth year, not its opening week. The partner who approves a structural detail is the same partner who reads the occupant's letter about it two years on.",
@@ -25,6 +29,11 @@ export const leadership = {
     phone: "+91 92610 00000",
     phoneHref: "+919261000000",
     email: "Omsoni@skggroup.com",
+    photo: {
+      src: "/images/leadership/om-soni.jpg",
+      alt: "Om Soni, Director of Shri Kuber Group",
+    },
+    bio: "Om Soni represents the next generation at SKG, working alongside the founding leadership on the firm's active sites — from CCM City Walk through to the ground it takes on next. He carries the same discipline forward: walk the site, know the detail, and stay answerable for it long after handover.",
   },
 
   firm: [

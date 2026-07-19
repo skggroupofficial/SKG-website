@@ -127,7 +127,8 @@ html.lenis body {
   .contact-grid,
   .cta-grid,
   .split-grid,
-  .stay-grid {
+  .stay-grid,
+  .mosaic-grid {
     grid-template-columns: 1fr !important;
   }
   .divisions-grid,
@@ -148,6 +149,16 @@ html.lenis body {
   .principle-row p {
     grid-column: 1 / -1;
   }
+  /* Lead + stack stop sharing a stretched row once they stack vertically —
+     give the stack tiles their own aspect ratio instead of flex-filling a
+     height that no longer exists. */
+  .mosaic-grid__stack {
+    flex-direction: row !important;
+  }
+  .mosaic-grid__tile {
+    aspect-ratio: 1 / 1 !important;
+    flex: 1 1 0 !important;
+  }
 }
 
 @media (max-width: 560px) {
@@ -163,6 +174,12 @@ html.lenis body {
   .materials-row,
   .detail-gallery {
     grid-template-columns: 1fr !important;
+  }
+  .mosaic-grid__stack {
+    flex-direction: column !important;
+  }
+  .mosaic-grid__tile {
+    aspect-ratio: 4 / 3 !important;
   }
   .footer-legal {
     flex-direction: column;

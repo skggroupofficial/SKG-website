@@ -69,7 +69,13 @@ export default function LeadershipPage() {
                 alignItems: "center",
               }}
             >
-              <Figure tone="dark" ratio="4 / 5" caption="Portrait · warm grade" />
+              <Figure
+                tone="dark"
+                ratio="4 / 5"
+                src={principal.photo?.src}
+                alt={principal.photo?.alt ?? principal.name}
+                caption={null}
+              />
 
               <div style={{ display: "flex", flexDirection: "column", gap: "1.3rem" }}>
                 <Eyebrow dash>{principal.role}</Eyebrow>
@@ -128,12 +134,24 @@ export default function LeadershipPage() {
                 marginTop: "clamp(2rem, 4vw, 3.5rem)",
               }}
             >
-              <Figure tone="dark" ratio="1 / 1" caption="" style={{ width: "clamp(80px, 10vw, 120px)", flexShrink: 0 }} />
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+              <Figure
+                tone="dark"
+                ratio="1 / 1"
+                src={director.photo?.src}
+                alt={director.photo?.alt ?? director.name}
+                caption={null}
+                style={{ width: "clamp(96px, 12vw, 148px)", flexShrink: 0 }}
+              />
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem" }}>
                 <Eyebrow dash>{director.role}</Eyebrow>
                 <h2 className="skg-display" style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.2rem)", margin: 0 }}>
                   {director.name}
                 </h2>
+                {director.bio && (
+                  <p className="skg-body" style={{ fontSize: "0.95rem", maxWidth: "56ch", margin: 0 }}>
+                    {director.bio}
+                  </p>
+                )}
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "1.2rem", marginTop: "0.4rem" }}>
                   <Link
                     href={`tel:${director.phoneHref}`}

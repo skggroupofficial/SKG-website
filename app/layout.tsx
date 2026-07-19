@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "property developer Rajasthan",
     "vertically integrated developer",
     "develop build host",
-    "Kuber Riverfront",
+    "CCM City Walk",
   ],
   alternates: { canonical: "/" },
   openGraph: {

@@ -57,14 +57,28 @@ export function Figure({
       }}
     >
       {src ? (
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          priority={priority}
-          sizes={sizes}
-          style={{ objectFit: "cover", filter: "var(--img-grade)" }}
-        />
+        <>
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            priority={priority}
+            sizes={sizes}
+            style={{ objectFit: "cover", filter: "var(--img-grade)" }}
+          />
+          {caption && (
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: "auto 0 0 0",
+                height: "42%",
+                background: "linear-gradient(180deg, transparent 0%, rgba(20,12,6,0.62) 100%)",
+                pointerEvents: "none",
+              }}
+            />
+          )}
+        </>
       ) : (
         <>
           <div
@@ -114,7 +128,7 @@ export function Figure({
             fontSize: "var(--text-2xs)",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: onDark ? "var(--text-on-dark-faint)" : "var(--tobacco-500)",
+            color: src ? "var(--bone-100)" : onDark ? "var(--text-on-dark-faint)" : "var(--tobacco-500)",
             zIndex: 1,
           }}
         >

@@ -13,7 +13,7 @@ import { breadcrumbLd, projectLd } from "@/lib/jsonld";
 export const metadata: Metadata = buildMetadata({
   title: "Hospitality",
   description:
-    "SKG operates what it builds — The Kuber, an 84-key house hotel, and The Linen House, a 36-key haveli retreat in Udaipur. Run in-house.",
+    "SKG operates what it builds. Our hospitality arm is in development — see the same standard applied today at CCM City Walk, our retail development in Hanumangarh.",
   path: "/hospitality",
 });
 
@@ -80,7 +80,7 @@ function Hero() {
           </p>
           <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap", marginTop: "0.4rem" }}>
             <Link href="/contact" className="skg-btn skg-btn--accent">
-              Plan a stay <ArrowRight size={15} weight="bold" className="skg-btn__icon" />
+              Register your interest <ArrowRight size={15} weight="bold" className="skg-btn__icon" />
             </Link>
             <Link href="/projects" className="skg-btn skg-btn--inverse">
               See the work
@@ -124,6 +124,48 @@ function Manifesto() {
 }
 
 function Properties() {
+  if (hospitalityProjects.length === 0) {
+    return (
+      <section
+        className="skg-lattice"
+        style={{
+          background: "var(--bone-300)",
+          padding: "var(--section-pad-y) 0",
+          borderTop: "1px solid var(--border-subtle)",
+          borderBottom: "1px solid var(--border-subtle)",
+        }}
+      >
+        <Container size="lg">
+          <div
+            style={{
+              textAlign: "center",
+              maxWidth: "56ch",
+              margin: "0 auto",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "1.2rem",
+              padding: "clamp(1rem, 3vw, 2rem) 0",
+            }}
+          >
+            <Eyebrow dash>No address yet</Eyebrow>
+            <h2 className="skg-display" style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)" }}>
+              Our first hospitality address is still ahead of us.
+            </h2>
+            <p className="skg-body" style={{ fontSize: "var(--text-md)" }}>
+              We are not going to open a hotel before we have earned the right to run one. Today, the same
+              discipline is on display at CCM City Walk — the retail arcade we are developing, building and
+              standing behind in Hanumangarh. Host is next.
+            </p>
+            <Link href="/projects/ccm-city-walk" className="skg-btn skg-btn--secondary">
+              See CCM City Walk <ArrowRight size={15} weight="bold" className="skg-btn__icon" />
+            </Link>
+          </div>
+        </Container>
+      </section>
+    );
+  }
+
   return (
     <section
       className="skg-lattice"

@@ -37,6 +37,12 @@ export interface ProjectSpec {
   v: string;
 }
 
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -54,6 +60,10 @@ export interface Project {
   narrative: string;
   /** True for hospitality assets SKG operates in-house (Hotel schema, Host page). */
   hospitality?: boolean;
+  /** Primary card/hero photograph. Falls back to the branded placeholder when omitted. */
+  image?: ProjectImage;
+  /** Supporting photographs for the project-detail gallery. */
+  gallery?: ProjectImage[];
 }
 
 export type ArticleBlock =

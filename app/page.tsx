@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Eyebrow, Tag, Divider } from "../components/ds";
-import { Container, SectionHeading, Figure } from "../components/site";
-import { ProjectCard } from "../components/site/ProjectCard";
+import { Container, SectionHeading, Figure, PhotoMosaic } from "../components/site";
 import { JsonLd } from "../components/site/JsonLd";
 import { divisionIcon, ArrowRight, ArrowUpRight } from "../components/site/icons";
 import { Reveal } from "../components/motion/Reveal";
@@ -16,23 +15,24 @@ import { faqLd } from "../lib/jsonld";
 const FAQ = [
   {
     q: "What does Shri Kuber Group do?",
-    a: "Shri Kuber Group (SKG) is a vertically integrated real estate developer based in Hanumangarh, Rajasthan. We develop the land, build the structure in-house, and operate the hospitality within our developments — three disciplines under one accountable roof.",
+    a: "Shri Kuber Group (SKG) is a vertically integrated real estate developer based in Hanumangarh, Rajasthan. We develop the land and build the structure in-house, and we intend to operate the hospitality within our developments ourselves as that side of the firm grows — three disciplines under one accountable roof.",
   },
   {
     q: "Where does SKG operate?",
-    a: "We develop across Rajasthan — principally from Hanumangarh — and, where a building deserves it, into Gujarat. Our office is at #27 City Center Market, Hanumangarh.",
+    a: "We develop from Hanumangarh, Rajasthan, and, where a building deserves it, into neighbouring regions. Our office is at #27 City Center Market, Hanumangarh.",
   },
   {
     q: "What does 'develop, build, host' mean?",
     a: "Develop is land acquisition, feasibility and masterplanning. Build is in-house construction and material governance. Host is operating the hospitality and estates ourselves — so a decision made at design reaches the guest fifteen years later.",
   },
   {
-    q: "Does SKG run its own hotels?",
-    a: "Yes. The Kuber, an 84-key house hotel, is operated end-to-end by SKG. The Linen House, a 36-key retreat in Udaipur, will be operated in-house as well.",
+    q: "What has SKG built so far?",
+    a: "CCM City Walk, our stone-colonnaded retail arcade in Hanumangarh, is underway now — the first units are open, glass-fronted and trading, with the rest of the arcade completing bay by bay. It is the standard the rest of our work is held to.",
   },
 ];
 
 function Hero() {
+  const p = projects[0];
   return (
     <section
       className="skg-on-dark"
@@ -99,9 +99,16 @@ function Hero() {
 
           <Reveal delay={120}>
             <div style={{ position: "relative" }}>
-              <Figure tone="dark" ratio="4 / 5" caption="Architectural detail · dawn · stone & brass" priority />
+              <Figure
+                tone={p.tone}
+                ratio="4 / 5"
+                src={p.image?.src}
+                alt={p.image?.alt ?? p.name}
+                caption={p.caption}
+                priority
+              />
               <Link
-                href="/projects/the-kuber"
+                href={`/projects/${p.slug}`}
                 style={{
                   position: "absolute",
                   left: "1rem",
@@ -115,7 +122,7 @@ function Hero() {
                   gap: "0.7rem",
                 }}
               >
-                <Tag variant="jade">Now open</Tag>
+                <Tag variant="outline">{p.status}</Tag>
                 <span
                   style={{
                     fontFamily: "var(--font-mono)",
@@ -125,7 +132,7 @@ function Hero() {
                     color: "var(--bone-200)",
                   }}
                 >
-                  The Kuber →
+                  {p.name} →
                 </span>
               </Link>
             </div>
@@ -270,7 +277,13 @@ function Featured() {
           style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "clamp(2rem, 4vw, 4rem)", alignItems: "center" }}
         >
           <Reveal>
-            <Figure tone="dark" ratio="16 / 11" caption={p.caption} />
+            <Figure
+              tone={p.tone}
+              ratio="16 / 11"
+              src={p.gallery?.[1]?.src ?? p.image?.src}
+              alt={p.gallery?.[1]?.alt ?? p.name}
+              caption={p.gallery?.[1]?.caption ?? p.caption}
+            />
           </Reveal>
           <Reveal delay={90}>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.3rem" }}>
@@ -328,24 +341,22 @@ function QuoteBand() {
   );
 }
 
-function SelectedProjects() {
-  const items = projects.slice(0, 3);
+function SiteGallery() {
+  const p = projects[0];
+  const shots = (p.gallery ?? []).slice(2, 5);
+  if (shots.length === 0) return null;
   return (
     <section style={{ padding: "var(--section-pad-y) 0" }}>
       <Container size="xl">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: "1rem", flexWrap: "wrap", marginBottom: "clamp(2rem, 3.5vw, 3rem)" }}>
-          <SectionHeading eyebrow="Selected work" title="Ground we are continuing." max="18ch" />
-          <Link href="/projects" className="skg-btn skg-btn--link">
-            All projects <ArrowUpRight size={15} className="skg-btn__icon" />
+          <SectionHeading eyebrow="On site" title="Ground we are continuing." max="18ch" />
+          <Link href={`/projects/${p.slug}`} className="skg-btn skg-btn--link">
+            The full gallery <ArrowUpRight size={15} className="skg-btn__icon" />
           </Link>
         </div>
-        <div className="projects-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
-          {items.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 80}>
-              <ProjectCard project={p} />
-            </Reveal>
-          ))}
-        </div>
+        <Reveal>
+          <PhotoMosaic images={shots} tone={p.tone} />
+        </Reveal>
       </Container>
     </section>
   );
@@ -423,7 +434,7 @@ export default function HomePage() {
       <Divisions />
       <Featured />
       <QuoteBand />
-      <SelectedProjects />
+      <SiteGallery />
       <JournalTeaser />
       <FaqAndCta />
     </>
