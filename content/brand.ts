@@ -15,9 +15,9 @@ export const brand = {
 
   phone: "+91 92610 92610",
   phoneHref: "+919261092610",
-  email: "contact@skggroup.com",
-  web: "www.skggroup.com",
-  url: "https://www.skggroup.com",
+  email: "contact@skggroup.co",
+  web: "www.skggroup.co",
+  url: "https://www.skggroup.co",
 
   address: {
     lines: [

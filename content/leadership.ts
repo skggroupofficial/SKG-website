@@ -11,7 +11,7 @@ export const leadership = {
     role: "Managing Director",
     phone: "+91 92610 00000",
     phoneHref: "+919261000000",
-    email: "Omsoni@skggroup.com",
+    email: "Omsoni@skggroup.co",
     quote: "We build places that outlast the conversation about them.",
     photo: {
       src: "/images/leadership/om-soni.jpg",
@@ -28,7 +28,7 @@ export const leadership = {
     role: "Director",
     phone: "+91 92610 00007",
     phoneHref: "+919261000007",
-    email: "arvind@skggroup.com",
+    email: "arvind@skggroup.co",
     photo: {
       src: "/images/leadership/arvind-soni.jpg",
       alt: "Arvind Soni, Director of Shri Kuber Group",

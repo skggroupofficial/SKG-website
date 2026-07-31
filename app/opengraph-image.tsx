@@ -43,7 +43,7 @@ export default function OpengraphImage() {
             <div style={{ display: "flex", fontSize: 38, color: "#F4EFE4" }}>The Power of Trust</div>
           </div>
           <div style={{ display: "flex", fontSize: 22, letterSpacing: 4, textTransform: "uppercase", color: "#897764" }}>
-            skggroup.com
+            skggroup.co
           </div>
         </div>
       </div>
