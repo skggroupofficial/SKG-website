@@ -77,8 +77,11 @@ export interface Article {
   excerpt: string;
   category: string;
   date: string; // ISO
+  dateModified?: string; // ISO; defaults to `date` if omitted
   readingTime: string;
   author: string;
+  /** Absolute or root-relative path; falls back to the sitewide OG card when omitted. */
+  image?: string;
   body: ArticleBlock[];
 }
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { brand } from "../content/brand";
 
 export const siteUrl = brand.url;
-export const defaultTitle = `${brand.name} — ${brand.tagline}`;
+export const defaultTitle = `${brand.name}, ${brand.address.locality} — ${brand.tagline}`;
 export const defaultDescription = brand.shortDescription;
 
 interface BuildMetaArgs {
@@ -33,7 +33,7 @@ export function buildMetadata({
     description,
     alternates: { canonical: path },
     openGraph: {
-      title: title ? `${title} — ${brand.short}` : defaultTitle,
+      title: title ? `${title} — ${brand.short}, ${brand.address.locality}` : defaultTitle,
       description,
       url,
       siteName: brand.name,
@@ -43,7 +43,7 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: title ? `${title} — ${brand.short}` : defaultTitle,
+      title: title ? `${title} — ${brand.short}, ${brand.address.locality}` : defaultTitle,
       description,
     },
     ...(noIndex ? { robots: { index: false, follow: false } } : {}),

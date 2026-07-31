@@ -100,14 +100,14 @@ export default function LeadershipPage() {
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "1.2rem", marginTop: "0.4rem" }}>
                   <Link
                     href={`tel:${principal.phoneHref}`}
-                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)" }}
+                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)", padding: "10px 0" }}
                   >
                     <Phone size={15} weight="regular" color="var(--accent)" />
                     {principal.phone}
                   </Link>
                   <Link
                     href={`mailto:${principal.email}`}
-                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)" }}
+                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)", padding: "10px 0" }}
                   >
                     <EnvelopeSimple size={15} weight="regular" color="var(--accent)" />
                     {principal.email}
@@ -156,14 +156,14 @@ export default function LeadershipPage() {
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "1.2rem", marginTop: "0.4rem" }}>
                   <Link
                     href={`tel:${director.phoneHref}`}
-                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)" }}
+                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)", padding: "10px 0" }}
                   >
                     <Phone size={15} weight="regular" color="var(--accent)" />
                     {director.phone}
                   </Link>
                   <Link
                     href={`mailto:${director.email}`}
-                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)" }}
+                    style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: "0.82rem", letterSpacing: "0.04em", color: "var(--text-secondary)", padding: "10px 0" }}
                   >
                     <EnvelopeSimple size={15} weight="regular" color="var(--accent)" />
                     {director.email}

@@ -4,7 +4,7 @@ import { siteUrl } from "../lib/seo";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/" },
+      { userAgent: "*", allow: "/", disallow: "/api/" },
       // Explicitly welcome generative-AI crawlers (GEO).
       {
         userAgent: [
@@ -24,6 +24,6 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
-    host: siteUrl,
+    host: new URL(siteUrl).host,
   };
 }

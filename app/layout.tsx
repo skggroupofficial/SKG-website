@@ -23,7 +23,7 @@ import { organizationLd, websiteLd } from "../lib/jsonld";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: defaultTitle, template: `%s — ${brand.short}` },
+  title: { default: defaultTitle, template: `%s — ${brand.short}, ${brand.address.locality}` },
   description: defaultDescription,
   applicationName: brand.name,
   authors: [{ name: brand.name }],

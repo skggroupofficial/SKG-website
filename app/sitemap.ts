@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "../lib/seo";
 import { projectSlugs } from "../content/projects";
-import { articleSlugs } from "../content/journal";
+import { articles } from "../content/journal";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -30,9 +30,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const articleEntries: MetadataRoute.Sitemap = articleSlugs.map((s) => ({
-    url: `${siteUrl}/journal/${s}`,
-    lastModified: now,
+  const articleEntries: MetadataRoute.Sitemap = articles.map((a) => ({
+    url: `${siteUrl}/journal/${a.slug}`,
+    lastModified: new Date(a.dateModified ?? a.date),
     changeFrequency: "yearly",
     priority: 0.5,
   }));

@@ -19,6 +19,7 @@ export function organizationLd() {
     "@type": ["Organization", "RealEstateAgent"],
     "@id": ORG_ID,
     name: brand.name,
+    legalName: brand.legalName,
     alternateName: brand.short,
     url: siteUrl,
     logo: `${siteUrl}/logo/skg-logo-gold.png`,
@@ -35,14 +36,14 @@ export function organizationLd() {
       latitude: brand.address.geo.lat,
       longitude: brand.address.geo.lng,
     },
-    areaServed: ["Gujarat", "Rajasthan", "India"],
+    areaServed: ["Rajasthan", "Gujarat", "India"],
     knowsAbout: [
       "Real estate development",
       "Construction management",
       "Hospitality operations",
       "Vertically integrated property development",
     ],
-    sameAs: brand.social.map((s) => s.href),
+    ...(brand.social.length > 0 ? { sameAs: brand.social.map((s) => s.href) } : {}),
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: brand.hours.days,
@@ -86,11 +87,10 @@ export function projectLd(p: Project) {
     url: `${siteUrl}/projects/${p.slug}`,
     address: {
       "@type": "PostalAddress",
-      addressLocality: p.location,
+      addressLocality: p.location.split(",")[0].trim(),
       addressRegion: brand.address.region,
       addressCountry: "IN",
     },
-    provider: { "@id": ORG_ID },
   };
 
   if (p.hospitality) {
@@ -103,11 +103,12 @@ export function projectLd(p: Project) {
     };
   }
 
-  return {
-    ...base,
-    "@type": "Place",
-    additionalType: "https://schema.org/RealEstateListing",
-  };
+  const isRetail = /retail|shop|mall|arcade/i.test(p.type);
+  const isResidential = /residen|apartment|villa|tower|flat/i.test(p.type);
+
+  if (isRetail) return { ...base, "@type": "ShoppingCenter", brand: { "@id": ORG_ID } };
+  if (isResidential) return { ...base, "@type": "ApartmentComplex" };
+  return { ...base, "@type": "Place" };
 }
 
 export function articleLd(a: Article) {
@@ -117,8 +118,9 @@ export function articleLd(a: Article) {
     headline: a.title,
     description: a.excerpt,
     url: `${siteUrl}/journal/${a.slug}`,
+    image: [a.image ?? `${siteUrl}/opengraph-image`],
     datePublished: a.date,
-    dateModified: a.date,
+    dateModified: a.dateModified ?? a.date,
     articleSection: a.category,
     author: { "@type": "Organization", name: a.author },
     publisher: { "@id": ORG_ID },

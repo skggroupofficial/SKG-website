@@ -40,14 +40,12 @@ export const brand = {
     closes: "18:30",
   },
 
-  founder: "Arvind Soni",
+  founder: "Om Soni",
   foundingYear: "2001",
 
-  // Social / sameAs (add real handles when available)
-  social: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/" },
-    { label: "Instagram", href: "https://www.instagram.com/" },
-  ],
+  // Social / sameAs — verified profile URLs only. Do NOT point at generic
+  // platform homepages; leave empty until real handles are live.
+  social: [] as { label: string; href: string }[],
 
   sectors: ["Real Estate Development", "Construction", "Hospitality"],
 };

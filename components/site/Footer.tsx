@@ -48,7 +48,7 @@ export function Footer() {
 
           {footerNav.map((col, i) => (
             <Reveal key={col.title} delay={100 + i * 100}>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+              <div style={{ display: "flex", flexDirection: "column" }}>
                 <span
                   style={{
                     fontFamily: "var(--font-mono)",
@@ -56,6 +56,7 @@ export function Footer() {
                     letterSpacing: "0.18em",
                     textTransform: "uppercase",
                     color: "var(--brass-300)",
+                    marginBottom: "0.5rem",
                   }}
                 >
                   {col.title}
@@ -66,9 +67,11 @@ export function Footer() {
                     href={item.href}
                     className="footer-link"
                     style={{
+                      display: "block",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.95rem",
                       color: "var(--text-on-dark-muted)",
+                      padding: "9px 0",
                       transition: "color var(--duration-fast) var(--ease-standard)",
                     }}
                   >

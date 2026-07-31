@@ -11,7 +11,7 @@ export const leadership = {
     role: "Managing Director",
     phone: "+91 92610 00000",
     phoneHref: "+919261000000",
-    email: "Omsoni@skggroup.co",
+    email: "omsoni@skggroup.co",
     quote: "We build places that outlast the conversation about them.",
     photo: {
       src: "/images/leadership/om-soni.jpg",

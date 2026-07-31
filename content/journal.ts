@@ -12,7 +12,7 @@ export const articles: Article[] = [
       "Why a developer should answer for the guest fifteen years on — and what changes when it does.",
     category: "Approach",
     date: "2026-03-18",
-    readingTime: "4 min",
+    readingTime: "1 min",
     author: "Shri Kuber Group",
     body: [
       {
@@ -46,7 +46,7 @@ export const articles: Article[] = [
       "Limestone, oiled timber, unlacquered brass, natural linen — and the rule that holds them together.",
     category: "Materials",
     date: "2026-02-02",
-    readingTime: "3 min",
+    readingTime: "1 min",
     author: "Shri Kuber Group",
     body: [
       {
@@ -76,7 +76,7 @@ export const articles: Article[] = [
       "Our long-horizon test for every project — and why a slow hold is a feature, not a constraint.",
     category: "Long horizon",
     date: "2025-12-09",
-    readingTime: "4 min",
+    readingTime: "1 min",
     author: "Shri Kuber Group",
     body: [
       {
