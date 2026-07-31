@@ -124,10 +124,12 @@ export default function LeadershipPage() {
         <Container size="xl">
           <Reveal>
             <div
+              className="split-grid"
               style={{
-                display: "flex",
+                display: "grid",
+                gridTemplateColumns: "0.7fr 1.3fr",
+                gap: "clamp(2rem, 4vw, 4rem)",
                 alignItems: "center",
-                gap: "clamp(1.5rem, 3vw, 3rem)",
                 padding: "clamp(2rem, 3.5vw, 3rem)",
                 background: "var(--bone-300)",
                 border: "1px solid var(--border-subtle)",
@@ -136,19 +138,18 @@ export default function LeadershipPage() {
             >
               <Figure
                 tone="dark"
-                ratio="1 / 1"
+                ratio="4 / 5"
                 src={director.photo?.src}
                 alt={director.photo?.alt ?? director.name}
                 caption={null}
-                style={{ width: "clamp(96px, 12vw, 148px)", flexShrink: 0 }}
               />
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 <Eyebrow dash>{director.role}</Eyebrow>
-                <h2 className="skg-display" style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.2rem)", margin: 0 }}>
+                <h2 className="skg-display" style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)", margin: 0 }}>
                   {director.name}
                 </h2>
                 {director.bio && (
-                  <p className="skg-body" style={{ fontSize: "0.95rem", maxWidth: "56ch", margin: 0 }}>
+                  <p className="skg-body" style={{ fontSize: "var(--text-md)", maxWidth: "56ch", margin: 0 }}>
                     {director.bio}
                   </p>
                 )}
